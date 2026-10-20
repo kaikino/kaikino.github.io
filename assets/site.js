@@ -108,10 +108,10 @@
   const NS = 'http://www.w3.org/2000/svg';
   const blocks = [
     { id: 'rtl', x: 40, y: 40, w: 150, h: 120, name: 'RTL / ASIC', tag: 'hardware',
-      text: 'SystemVerilog from the ground up: a 64-bit RISC-V core, a programmable protocol-emulator ASIC taped out through Tiny Tapeout on IHP 130 nm, cocotb lock-step verification, formal safety proofs with SymbiYosys, and timing sign-off.',
+      text: 'A 64-bit RISC-V core, a programmable protocol-emulator ASIC taped out through Tiny Tapeout on IHP 130 nm, cocotb lock-step verification, formal safety proofs with SymbiYosys, and timing sign-off.',
       links: [['core-asic', 'https://github.com/kaikino/core-asic'], ['KAISC-V', 'https://github.com/kaikino/KAISC-V'], ['sv-delay-inject', 'https://github.com/kaikino/sv-delay-inject']] },
     { id: 'kernel', x: 200, y: 40, w: 160, h: 70, name: 'KERNEL / SYSTEMS', tag: 'systems',
-      text: 'An xv6-style kernel for RISC-V rewritten in Rust, a cycle-stepped NES emulator in C++, and a first-person 3D filesystem explorer built on Bevy. I like the layer where software meets the machine.',
+      text: 'An xv6-style kernel for RISC-V in Rust, an NES emulator in C++, and a first-person 3D filesystem explorer built on Bevy.',
       links: [['kv6', 'https://github.com/kaikino/kv6'], ['NES-emulator', 'https://github.com/kaikino/NES-emulator'], ['file-city', 'https://github.com/kaikino/file-city']] },
     { id: 'dist', x: 200, y: 120, w: 160, h: 40, name: 'DISTRIBUTED', tag: 'systems',
       text: 'A sharded key-value store on MultiPaxos, a small SQL engine, and production work on CockroachDB-backed microservices at Rakuten.',
@@ -126,7 +126,7 @@
       text: 'OneBusOnline: a live Puget Sound transit PWA on React + Leaflet with a Zod-validated Express BFF and a three-tier cache (SWR, Redis, IndexedDB).',
       links: [['onebus.online', 'https://onebus.online'], ['OneBusOnline', 'https://github.com/kaikino/OneBusOnline']] },
     { id: 'tools', x: 40, y: 270, w: 320, h: 50, name: 'TOOLS & RELEASES', tag: 'tools',
-      text: 'kPen, a C++/SDL2 raster editor with 10 cross-platform releases and a Homebrew tap; Neovim + tmux dotfiles; small CLIs for the things I keep doing by hand.',
+      text: 'kPen, a C++/SDL2 raster editor with 10 cross-platform releases and a Homebrew tap; Neovim and tmux dotfiles; small CLIs.',
       links: [['kPen', 'https://github.com/kaikino/kPen'], ['dotfiles', 'https://github.com/kaikino/dotfiles']] },
   ];
   const el = (n, a, p) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); (p || svg).appendChild(e); return e; };

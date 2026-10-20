@@ -5,20 +5,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kai Kinoshita</title>
-<meta name="description" content="Kai Kinoshita — Computer Engineering at the University of Washington. Taped-out ASICs, a RISC-V core, a Rust kernel, networking tools, and a transit app.">
+<meta name="description" content="Kai Kinoshita — Computer Engineering student at the University of Washington. Hardware, systems and networking projects, internships, and a RISC-V pipeline simulator.">
 <link rel="canonical" href="https://kaikino.github.io/">
 <meta name="theme-color" content="#070b16">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Kai Kinoshita">
-<meta property="og:title" content="Kai Kinoshita"><meta property="og:description" content="Kai Kinoshita — Computer Engineering at the University of Washington. Taped-out ASICs, a RISC-V core, a Rust kernel, networking tools, and a transit app.">
+<meta property="og:title" content="Kai Kinoshita"><meta property="og:description" content="Kai Kinoshita — Computer Engineering student at the University of Washington. Hardware, systems and networking projects, internships, and a RISC-V pipeline simulator.">
 <meta property="og:url" content="https://kaikino.github.io/"><meta property="og:image" content="https://kaikino.github.io/assets/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Kai Kinoshita — I build things from the gates up">
+<meta property="og:image:alt" content="Kai Kinoshita — Computer Engineering, University of Washington">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Kai Kinoshita">
-<meta name="twitter:description" content="Kai Kinoshita — Computer Engineering at the University of Washington. Taped-out ASICs, a RISC-V core, a Rust kernel, networking tools, and a transit app."><meta name="twitter:image" content="https://kaikino.github.io/assets/og.png">
+<meta name="twitter:description" content="Kai Kinoshita — Computer Engineering student at the University of Washington. Hardware, systems and networking projects, internships, and a RISC-V pipeline simulator."><meta name="twitter:image" content="https://kaikino.github.io/assets/og.png">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/style.css">
 <script>document.documentElement.classList.remove('no-js')</script>
 <!-- /head -->
@@ -38,21 +38,25 @@
 <section class="hero" aria-labelledby="hero-h">
   <canvas id="traces" aria-hidden="true"></canvas>
   <div class="wrap">
-    <div class="eyebrow">kai kinoshita · computer engineering @ uw · bellevue, wa</div>
-    <h1 id="hero-h">I build things<br>from the <span class="serif">gates</span> up.</h1>
-    <p class="lede">Taped-out ASICs, a RISC-V core, a Rust kernel, a BGP speaker, a transit app people actually ride with. Currently a software engineer intern at Rakuten in Tokyo.</p>
-    <div class="cta">
-      <a class="btn primary" href="/projects.html">projects</a>
-      <a class="btn" href="/experience.html">experience</a>
-      <a class="btn" href="/lab.html">run the pipeline sim ▸</a>
-      <a class="btn" href="https://github.com/kaikino" target="_blank" rel="noopener">github ↗</a>
+    <div class="tui">
+      <span class="ttl">kai@kinoshita:~</span>
+      <div class="eyebrow">whoami</div>
+      <h1 id="hero-h">Kai Kinoshita<span class="cur" aria-hidden="true"></span></h1>
+      <p class="sub">Computer Engineering · University of Washington · Bellevue, WA</p>
+      <p class="lede">I work on hardware and systems: RTL and ASIC design, a RISC-V CPU, an OS kernel, networking tools, and some web. Currently a software engineer intern at Rakuten in Tokyo.</p>
+      <div class="cta">
+        <a class="btn primary" href="/projects.html">projects</a>
+        <a class="btn" href="/experience.html">experience</a>
+        <a class="btn" href="/lab.html">pipeline simulator</a>
+        <a class="btn" href="https://github.com/kaikino" target="_blank" rel="noopener">github ↗</a>
+      </div>
+      <ul class="chips" aria-label="Quick facts">
+        <li class="chip"><b>3.94</b> GPA</li>
+        <li class="chip"><b>4</b> AWS certifications</li>
+        <li class="chip"><b>1</b> chip taped out</li>
+        <li class="chip">B.S. expected <b>June 2028</b></li>
+      </ul>
     </div>
-    <ul class="chips" aria-label="Quick facts">
-      <li class="chip"><b>3.94</b> GPA</li>
-      <li class="chip"><b>4</b> AWS certs</li>
-      <li class="chip"><b>1</b> chip taped out</li>
-      <li class="chip"><b>8</b> languages, 1 favourite (it's Rust this month)</li>
-    </ul>
   </div>
   <div class="scrollhint" aria-hidden="true">▼ scroll</div>
 </section>
@@ -62,8 +66,8 @@
     <div class="sec-head"><h2 id="about-h"><span class="num" aria-hidden="true">01</span>About</h2></div>
     <div class="grid c2">
       <div>
-        <p>I'm a Computer Engineering student at the University of Washington (B.S. expected June 2028, Dean's List every quarter). I'm happiest at the boundary where software stops being abstract: writing RTL and watching it close timing, poking a kernel until the page tables behave, or getting two BGP speakers to agree on a route.</p>
-        <p>I've interned at <b>Amazon Web Services</b> (cloud support), <b>Extreme Networks</b> (systems engineering) and now <b>Rakuten</b> in Tokyo (software engineering). Outside of that I ship side projects, most of which are on <a href="https://github.com/kaikino" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>I'm a Computer Engineering student at the University of Washington (B.S. expected June 2028, Dean's List every quarter). My interests are computer architecture, operating systems, and networking: the layer where software meets hardware.</p>
+        <p>I've interned at <b>Amazon Web Services</b> (cloud support), <b>Extreme Networks</b> (systems engineering) and now <b>Rakuten</b> in Tokyo (software engineering). Side projects are on <a href="https://github.com/kaikino" target="_blank" rel="noopener">GitHub</a>.</p>
         <dl class="kv">
           <dt>now</dt><dd>SWE intern @ Rakuten Group, Tokyo</dd>
           <dt>school</dt><dd>UW Computer Engineering · Distributed Systems, OS, Architecture, Networks, Databases</dd>
@@ -76,7 +80,7 @@
         <svg id="die" class="die js-only" viewBox="0 0 400 400" role="group" aria-label="Chip floorplan of skill areas. Each block is a button that describes an area."></svg>
         <div id="floor-info" class="floor-info muted small" aria-live="polite">
           <noscript>Skill areas: RTL / ASIC, kernel and systems, distributed systems, networks, cloud, web, tools. See <a href="/projects.html">projects</a>.</noscript>
-          <span class="js-only">hover or focus a block</span>
+          <span class="js-only">hover or focus a block for details</span>
         </div>
       </div>
     </div>
@@ -104,14 +108,14 @@
   </article>
 <article class="card feat" data-tags="hardware">
     <div class="tag">hardware</div><span class="corner">2026</span>
-    <h3><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener">KAISC-V</a></h3><p>A simple 64-bit RISC-V CPU in SystemVerilog. The pipeline simulator on the lab page of this site is a toy cousin of it.</p>
+    <h3><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener">KAISC-V</a></h3><p>A simple 64-bit RISC-V CPU in SystemVerilog. The lab page has a simplified simulator of the same kind of pipeline.</p>
     
     <div class="stack" style="margin-top:8px"><span>SystemVerilog</span></div>
     <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener" aria-label="KAISC-V repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card feat" data-tags="systems">
     <div class="tag">systems</div><span class="corner">2026</span>
-    <h3><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener">kv6</a></h3><p>An xv6-based teaching kernel for RISC-V, in Rust. Traps, paging, scheduling and syscalls without the C.</p>
+    <h3><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener">kv6</a></h3><p>An xv6-based teaching kernel for RISC-V, written in Rust: traps, paging, scheduling and syscalls.</p>
     
     <div class="stack" style="margin-top:8px"><span>Rust</span><span>RISC-V</span></div>
     <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener" aria-label="kv6 repository on GitHub">repo ↗</a></div>

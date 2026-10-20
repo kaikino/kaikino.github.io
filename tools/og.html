@@ -1,15 +1,15 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 html,body{margin:0;width:1200px;height:630px;overflow:hidden}
-body{background:#070b16;color:#e8ebf4;font-family:'IBM Plex Sans',sans-serif;position:relative;
+body{background:#070b16;color:#e8ebf4;font-family:'IBM Plex Mono',monospace;position:relative;
  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 0);background-size:28px 28px}
 .bar{position:absolute;left:0;right:0;top:0;height:52px;border-bottom:1px solid #1e2b4a;display:flex;align-items:center;padding:0 48px;font-family:'IBM Plex Mono',monospace;font-size:20px}
 .bar b{color:#d9a066;font-weight:500}.bar .at{color:#cf3a52}.bar .cur{display:inline-block;width:10px;height:22px;background:#7bd3b5;vertical-align:-3px;margin-left:4px}
 .main{position:absolute;left:48px;top:120px;width:700px}
 .eye{font-family:'IBM Plex Mono',monospace;color:#7bd3b5;font-size:20px;margin-bottom:18px}
-h1{font-size:84px;line-height:1;margin:0 0 26px;font-weight:600;letter-spacing:-.01em}
-h1 i{font-family:'Instrument Serif',serif;font-weight:400;color:#f1c38e}
+h1{font-size:64px;line-height:1.1;margin:0 0 10px;font-weight:600}
+.sub{font-size:24px;color:#f1c38e;margin:0 0 22px}
 p{font-size:25px;line-height:1.4;color:#9aa5c0;margin:0;max-width:620px}
 .foot{position:absolute;left:0;right:0;bottom:0;height:44px;background:#0b1222;border-top:1px solid #1e2b4a;display:flex;font-family:'IBM Plex Mono',monospace;font-size:15px;color:#9aa5c0}
 .foot span{padding:12px 16px;border-right:1px solid #1e2b4a}.foot .m{background:#9b2335;color:#fff;font-weight:600}.foot .cu{color:#d9a066}
@@ -17,9 +17,10 @@ svg{position:absolute;right:48px;top:96px;width:400px;height:400px;background:#0
 .blk{fill:#121d35;stroke:#2b3b63}.on{fill:#3a1620;stroke:#cf3a52}.pad{fill:#2b3b63}text{font-family:'IBM Plex Mono',monospace;font-size:10px;fill:#9aa5c0}
 </style></head><body>
 <div class="bar"><b>kai</b><span class="at">@</span>kinoshita:~<span class="cur"></span></div>
-<div class="main"><div class="eye">// kai kinoshita · computer engineering @ uw</div>
-<h1>I build things<br>from the <i>gates</i> up.</h1>
-<p>Taped-out ASICs, a RISC-V core, a Rust kernel, a BGP speaker, and a transit app people actually ride with.</p></div>
+<div class="main"><div class="eye">$ whoami</div>
+<h1>Kai Kinoshita</h1>
+<div class="sub">Computer Engineering · University of Washington</div>
+<p>RTL and ASIC design, a RISC-V CPU, an OS kernel, networking tools. SWE intern at Rakuten, Tokyo.</p></div>
 <svg viewBox="0 0 400 400">
 <g id="pads"></g>
 <rect x="32" y="32" width="336" height="336" fill="none" stroke="#d9a066" stroke-dasharray="3 3" opacity=".5"/>

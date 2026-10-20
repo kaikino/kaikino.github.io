@@ -12,13 +12,13 @@
 <meta property="og:title" content="Lab · Kai Kinoshita"><meta property="og:description" content="An interactive 5-stage RISC-V pipeline simulator: write RV32I assembly, step it, and watch stalls, forwarding and flushes.">
 <meta property="og:url" content="https://kaikino.github.io/lab.html"><meta property="og:image" content="https://kaikino.github.io/assets/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Kai Kinoshita — I build things from the gates up">
+<meta property="og:image:alt" content="Kai Kinoshita — Computer Engineering, University of Washington">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Lab · Kai Kinoshita">
 <meta name="twitter:description" content="An interactive 5-stage RISC-V pipeline simulator: write RV32I assembly, step it, and watch stalls, forwarding and flushes."><meta name="twitter:image" content="https://kaikino.github.io/assets/og.png">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/style.css">
 <script>document.documentElement.classList.remove('no-js')</script>
 <!-- /head -->
@@ -33,8 +33,8 @@
 <!-- /nav -->
 <main id="main" class="wrap">
   <div class="page-head">
-    <h1>Lab: <span class="serif cu">a pipeline you can poke</span></h1>
-    <p>A toy 5-stage in-order RISC-V pipeline (IF → ID → EX → MEM → WB) running a subset of RV32I, in your browser. Write some assembly, step it, and watch load-use stalls, forwarding and branch flushes happen in the diagram. It is a cartoon of <a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener">KAISC-V</a>, not the real thing.</p>
+    <h1>Lab: RISC-V pipeline simulator</h1>
+    <p>A simplified 5-stage in-order RISC-V pipeline (IF → ID → EX → MEM → WB) running a subset of RV32I, in the browser. Write assembly, step it, and watch load-use stalls, forwarding and branch flushes in the diagram. It is a teaching model, not <a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener">KAISC-V</a> itself.</p>
   </div>
   <noscript><div class="panel" style="padding:16px;margin-bottom:18px"><b>This page needs JavaScript.</b> The simulator assembles and runs your program entirely in the browser, so there is nothing to show without it. Everything else on the site works without scripts.</div></noscript>
 

@@ -5,20 +5,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Projects · Kai Kinoshita</title>
-<meta name="description" content="Projects by Kai Kinoshita: a protocol-emulator ASIC, a RISC-V CPU, a Rust kernel, an NES emulator, networking tools, and OneBusOnline.">
+<meta name="description" content="Projects by Kai Kinoshita: a protocol-emulator ASIC, a RISC-V CPU, a Rust kernel, an NES emulator, networking tools and OneBusOnline.">
 <link rel="canonical" href="https://kaikino.github.io/projects.html">
 <meta name="theme-color" content="#070b16">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Kai Kinoshita">
-<meta property="og:title" content="Projects · Kai Kinoshita"><meta property="og:description" content="Projects by Kai Kinoshita: a protocol-emulator ASIC, a RISC-V CPU, a Rust kernel, an NES emulator, networking tools, and OneBusOnline.">
+<meta property="og:title" content="Projects · Kai Kinoshita"><meta property="og:description" content="Projects by Kai Kinoshita: a protocol-emulator ASIC, a RISC-V CPU, a Rust kernel, an NES emulator, networking tools and OneBusOnline.">
 <meta property="og:url" content="https://kaikino.github.io/projects.html"><meta property="og:image" content="https://kaikino.github.io/assets/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Kai Kinoshita — I build things from the gates up">
+<meta property="og:image:alt" content="Kai Kinoshita — Computer Engineering, University of Washington">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Projects · Kai Kinoshita">
-<meta name="twitter:description" content="Projects by Kai Kinoshita: a protocol-emulator ASIC, a RISC-V CPU, a Rust kernel, an NES emulator, networking tools, and OneBusOnline."><meta name="twitter:image" content="https://kaikino.github.io/assets/og.png">
+<meta name="twitter:description" content="Projects by Kai Kinoshita: a protocol-emulator ASIC, a RISC-V CPU, a Rust kernel, an NES emulator, networking tools and OneBusOnline."><meta name="twitter:image" content="https://kaikino.github.io/assets/og.png">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/style.css">
 <script>document.documentElement.classList.remove('no-js')</script>
 <!-- /head -->
@@ -34,7 +34,7 @@
 <main id="main" class="wrap">
   <div class="page-head">
     <h1>Projects</h1>
-    <p>Mostly hardware and systems, with detours into networks and the web. Filter by area; everything with a repo link is public.</p>
+    <p>Hardware, systems, networks and web. Filter by area; everything with a repo link is public.</p>
   </div>
   <div class="filters js-only" id="filters" role="group" aria-label="Filter projects by area">
     <button type="button" data-t="all" class="on" aria-pressed="true">all</button>
@@ -65,14 +65,14 @@
   </article>
 <article class="card feat" data-tags="hardware">
     <div class="tag">hardware</div><span class="corner">2026</span>
-    <h2><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener">KAISC-V</a></h2><p>A simple 64-bit RISC-V CPU in SystemVerilog. The pipeline simulator on the lab page of this site is a toy cousin of it.</p>
+    <h2><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener">KAISC-V</a></h2><p>A simple 64-bit RISC-V CPU in SystemVerilog. The lab page has a simplified simulator of the same kind of pipeline.</p>
     
     <div class="stack" style="margin-top:8px"><span>SystemVerilog</span></div>
     <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener" aria-label="KAISC-V repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card feat" data-tags="systems">
     <div class="tag">systems</div><span class="corner">2026</span>
-    <h2><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener">kv6</a></h2><p>An xv6-based teaching kernel for RISC-V, in Rust. Traps, paging, scheduling and syscalls without the C.</p>
+    <h2><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener">kv6</a></h2><p>An xv6-based teaching kernel for RISC-V, written in Rust: traps, paging, scheduling and syscalls.</p>
     
     <div class="stack" style="margin-top:8px"><span>Rust</span><span>RISC-V</span></div>
     <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener" aria-label="kv6 repository on GitHub">repo ↗</a></div>
@@ -121,21 +121,21 @@
   </article>
 <article class="card " data-tags="networks">
     <div class="tag">networks</div><span class="corner">2026</span>
-    <h2><a href="https://github.com/kaikino/bgp-lab" target="_blank" rel="noopener">bgp-lab</a></h2><p>A minimal BGP speaker in Python that peers with FRRouting in Docker: OPEN, KEEPALIVE, UPDATE by hand.</p>
+    <h2><a href="https://github.com/kaikino/bgp-lab" target="_blank" rel="noopener">bgp-lab</a></h2><p>A minimal BGP speaker in Python that peers with FRRouting in Docker. Implements the OPEN, KEEPALIVE and UPDATE messages.</p>
     
     <div class="stack" style="margin-top:8px"><span>Python</span><span>FRR</span><span>Docker</span></div>
     <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/bgp-lab" target="_blank" rel="noopener" aria-label="bgp-lab repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="hardware tools">
     <div class="tag">hardware · tools</div><span class="corner">2026</span>
-    <h2><a href="https://github.com/kaikino/sv-delay-inject" target="_blank" rel="noopener">sv-delay-inject</a></h2><p>A script for injecting gate delays into SystemVerilog modules, for watching glitches and races in simulation.</p>
+    <h2><a href="https://github.com/kaikino/sv-delay-inject" target="_blank" rel="noopener">sv-delay-inject</a></h2><p>A script for injecting gate delays into SystemVerilog modules, to expose glitches and races in simulation.</p>
     
     <div class="stack" style="margin-top:8px"><span>Python</span><span>SystemVerilog</span></div>
     <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/sv-delay-inject" target="_blank" rel="noopener" aria-label="sv-delay-inject repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="hardware">
     <div class="tag">hardware</div><span class="corner">2026</span>
-    <h2><a href="https://github.com/kaikino/sv-snake" target="_blank" rel="noopener">sv-snake</a></h2><a class="shot contain" href="assets/img/sv-snake-diagram.webp" data-alt="sv-snake block diagram" aria-label="Enlarge: sv-snake block diagram"><img src="assets/img/sv-snake-diagram-640.webp" srcset="assets/img/sv-snake-diagram-640.webp 640w, assets/img/sv-snake-diagram.webp 1200w" sizes="(max-width: 700px) 90vw, 520px" width="1200" height="812" alt="sv-snake block diagram" loading="lazy"></a><p>Snake & apples, entirely in hardware.</p>
+    <h2><a href="https://github.com/kaikino/sv-snake" target="_blank" rel="noopener">sv-snake</a></h2><a class="shot contain" href="assets/img/sv-snake-diagram.webp" data-alt="sv-snake block diagram" aria-label="Enlarge: sv-snake block diagram"><img src="assets/img/sv-snake-diagram-640.webp" srcset="assets/img/sv-snake-diagram-640.webp 640w, assets/img/sv-snake-diagram.webp 1200w" sizes="(max-width: 700px) 90vw, 520px" width="1200" height="812" alt="sv-snake block diagram" loading="lazy"></a><p>A snake game implemented in SystemVerilog, running on an FPGA with an LED matrix display and 7-segment score.</p>
     
     <div class="stack" style="margin-top:8px"><span>SystemVerilog</span><span>FPGA</span></div>
     <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/sv-snake" target="_blank" rel="noopener" aria-label="sv-snake repository on GitHub">repo ↗</a></div>
