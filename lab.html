@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Lab · Kai Kinoshita</title>
+<meta name="description" content="An interactive 5-stage RISC-V pipeline simulator: write RV32I assembly, step it, and watch stalls, forwarding and flushes.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="page-head">
+    <h1>Lab: <span class="serif cu">a pipeline you can poke</span></h1>
+    <p>A toy 5-stage in-order RISC-V pipeline (IF → ID → EX → MEM → WB) running a subset of RV32I, in your browser. Write some assembly, step it, and watch load-use stalls, forwarding and branch flushes happen in the diagram. It is a cartoon of <a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener">KAISC-V</a>, not the real thing.</p>
+  </div>
+
+  <div class="lab">
+    <div>
+      <div class="panel">
+        <div class="ph"><b>program.s</b><div class="right"><select id="preset" aria-label="preset">
+          <option value="sum">sum 1..10</option><option value="fib">fibonacci → memory</option><option value="hazard">hazards demo</option><option value="gcd">gcd by subtraction</option></select></div></div>
+        <div class="pb">
+          <textarea id="src" class="code" spellcheck="false" aria-label="assembly source"></textarea>
+          <div class="ctrl">
+            <button id="b-step" class="primary" title="space">step ▸</button>
+            <button id="b-run" title="enter">▶ run</button>
+            <button id="b-reset" title="r">⟲ reset</button>
+            <label>speed <input id="speed" type="range" min="1" max="30" value="6"></label>
+            <label><input id="hex" type="checkbox"> hex</label>
+          </div>
+          <div class="err" id="err"></div>
+        </div>
+      </div>
+
+      <div class="panel help" style="margin-top:16px">
+        <div class="ph"><b>notes</b></div>
+        <div class="pb">
+          <p style="margin-top:0">Keys: <code>space</code> step, <code>enter</code> run/pause, <code>r</code> reset. Memory is 64 words, byte-addressed (<code>0..252</code>). <code>ecall</code> halts.</p>
+          <p>Model: registers read in EX with full forwarding from EX/MEM and MEM/WB (<span class="amber">↯</span> marks a forwarded operand). A load followed immediately by a consumer stalls one cycle (<code>· ·</code>). Branches and jumps resolve in EX; the one wrong-path instruction behind them is squashed (<span class="ox">X</span>).</p>
+          <details><summary>supported instructions</summary>
+            <table>
+              <tr><td>add sub and or xor sll srl sra slt sltu</td><td>rd, rs1, rs2</td></tr>
+              <tr><td>addi andi ori xori slli srli srai slti sltiu</td><td>rd, rs1, imm</td></tr>
+              <tr><td>lui auipc</td><td>rd, imm</td></tr>
+              <tr><td>lw sw</td><td>rd/rs2, imm(rs1)</td></tr>
+              <tr><td>beq bne blt bge bltu bgeu</td><td>rs1, rs2, label</td></tr>
+              <tr><td>jal jalr j ret</td><td>[rd,] label / rs1</td></tr>
+              <tr><td>li mv nop ecall</td><td>pseudo-ops</td></tr>
+            </table>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel">
+        <div class="ph"><b>pipeline</b><div class="right stat" id="stat"></div></div>
+        <div class="pb pipe" id="pipe"></div>
+      </div>
+      <div class="panel" style="margin-top:16px">
+        <div class="ph"><b>waveform</b><span>clk / stall / flush / pc</span></div>
+        <div class="pb wave" id="wave"></div>
+      </div>
+      <div class="grid c2" style="margin-top:16px">
+        <div class="panel"><div class="ph"><b>registers</b><span>x0–x31, ABI names</span></div><div class="pb regs" id="regs"></div></div>
+        <div class="panel"><div class="ph"><b>memory</b><span>first 32 words</span></div><div class="pb memv" id="mem"></div></div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="assets/riscv.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

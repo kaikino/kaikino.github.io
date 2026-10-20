@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>404 · Kai Kinoshita</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<main class="wrap" style="padding-top:80px">
+  <div class="mono dim small">// trap: instruction page fault</div>
+  <h1 style="margin-top:8px">scause = <span class="ox">0xC</span></h1>
+  <p class="muted">The page you asked for isn't mapped. stval = <code id="stval">/</code></p>
+  <p><a class="btn" href="/">↩ return to user mode</a></p>
+</main>
+<script>document.getElementById('stval').textContent=location.pathname</script>
+<script src="/assets/site.js"></script>
+</body>
+</html>

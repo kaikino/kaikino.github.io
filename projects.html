@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Projects · Kai Kinoshita</title>
+<meta name="description" content="Projects by Kai Kinoshita: ASICs, a RISC-V CPU, a Rust kernel, an NES emulator, networking tools, and a transit app.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="page-head">
+    <h1>Projects</h1>
+    <p>Mostly hardware and systems, with detours into networks and the web. Filter by area; everything with a repo link is public.</p>
+  </div>
+  <div class="filters" id="filters">
+    <button data-t="all" class="on">all</button>
+    <button data-t="hardware">hardware</button>
+    <button data-t="systems">systems</button>
+    <button data-t="networks">networks</button>
+    <button data-t="web">web</button>
+    <button data-t="cloud">cloud</button>
+    <button data-t="tools">tools</button>
+    <button data-t="coursework">coursework</button>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="grid c2" id="grid"></div>
+</main>
+<script src="assets/projects.js"></script>
+<script>
+(function(){
+  const grid=document.getElementById('grid'), count=document.getElementById('count'), btns=[...document.querySelectorAll('#filters button')];
+  grid.innerHTML=PROJECTS.map(renderProjectCard).join('');
+  const cards=[...grid.children];
+  function apply(t){
+    btns.forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+    let n=0; cards.forEach(c=>{const ok=t==='all'||c.dataset.tags.split(' ').includes(t); c.style.display=ok?'':'none'; if(ok)n++;});
+    count.textContent=n+' / '+cards.length;
+    const u=new URL(location); if(t==='all')u.searchParams.delete('tag'); else u.searchParams.set('tag',t); history.replaceState(null,'',u);
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.t)));
+  const init=new URLSearchParams(location.search).get('tag');
+  apply(init&&btns.some(b=>b.dataset.t===init)?init:'all');
+})();
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

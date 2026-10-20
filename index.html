@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Kai Kinoshita</title>
+<meta name="description" content="Kai Kinoshita — Computer Engineering at the University of Washington. RTL, kernels, networks, and the occasional transit app.">
+<meta property="og:title" content="Kai Kinoshita"><meta property="og:description" content="Computer Engineering @ UW. RTL, kernels, networks, and the occasional transit app."><meta property="og:type" content="website"><meta property="og:url" content="https://kaikino.github.io/">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+<section class="hero">
+  <canvas id="traces" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="eyebrow">kai kinoshita · computer engineering @ uw · bellevue, wa</div>
+    <h1>I build things<br>from the <span class="serif">gates</span> up.</h1>
+    <p class="lede">Taped-out ASICs, a RISC-V core, a Rust kernel, a BGP speaker, a transit app people actually ride with. Currently a software engineer intern at Rakuten in Tokyo.</p>
+    <div class="cta">
+      <a class="btn primary" href="projects.html">projects</a>
+      <a class="btn" href="experience.html">experience</a>
+      <a class="btn" href="lab.html">run the pipeline sim ▸</a>
+      <a class="btn" href="https://github.com/kaikino" target="_blank" rel="noopener">github ↗</a>
+    </div>
+    <div class="chips">
+      <span class="chip"><b>3.94</b> GPA</span>
+      <span class="chip"><b>4</b> AWS certs</span>
+      <span class="chip"><b>1</b> chip taped out</span>
+      <span class="chip"><b>8</b> languages, 1 favourite (it's Rust this month)</span>
+    </div>
+  </div>
+  <div class="scrollhint">▼ scroll</div>
+</section>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head"><h2><span class="num">01</span>About</h2></div>
+    <div class="grid c2">
+      <div>
+        <p>I'm a Computer Engineering student at the University of Washington (B.S. expected June 2028, Dean's List every quarter). I'm happiest at the boundary where software stops being abstract: writing RTL and watching it close timing, poking a kernel until the page tables behave, or getting two BGP speakers to agree on a route.</p>
+        <p>I've interned at <b>Amazon Web Services</b> (cloud support), <b>Extreme Networks</b> (systems engineering) and now <b>Rakuten</b> in Tokyo (software engineering). Outside of that I ship side projects, most of which are on <a href="https://github.com/kaikino" target="_blank" rel="noopener">GitHub</a>.</p>
+        <dl class="kv">
+          <dt>now</dt><dd>SWE intern @ Rakuten Group, Tokyo</dd>
+          <dt>school</dt><dd>UW Computer Engineering · Distributed Systems, OS, Architecture, Networks, Databases</dd>
+          <dt>languages</dt><dd>Rust, C, C++, SystemVerilog, Python, Java, TypeScript, SQL</dd>
+          <dt>certs</dt><dd>AWS Solutions Architect – Professional; Developer, Data Engineer, ML Engineer – Associate</dd>
+          <dt>contact</dt><dd><a href="mailto:kai.n.kinoshita@gmail.com">kai.n.kinoshita@gmail.com</a></dd>
+        </dl>
+      </div>
+      <div class="floor">
+        <svg id="die" class="die" viewBox="0 0 400 400" role="img" aria-label="Interactive chip floorplan of skill areas"></svg>
+        <div id="floor-info" class="floor-info muted small">hover a block</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="featured" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2><span class="num">02</span>Selected work</h2><a class="more" href="projects.html">all projects →</a></div>
+    <div class="grid c3" id="featured-grid"></div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2><span class="num">03</span>Elsewhere</h2></div>
+    <div class="cta">
+      <a class="btn" href="https://github.com/kaikino" target="_blank" rel="noopener">github.com/kaikino ↗</a>
+      <a class="btn" href="https://onebus.online" target="_blank" rel="noopener">onebus.online ↗</a>
+      <a class="btn" href="https://pypi.org/project/xiq-client/" target="_blank" rel="noopener">xiq-client on PyPI ↗</a>
+      <a class="btn" href="mailto:kai.n.kinoshita@gmail.com">email</a>
+    </div>
+  </div>
+</section>
+</main>
+<script src="assets/projects.js"></script>
+<script>
+document.getElementById('featured-grid').innerHTML = PROJECTS.filter(p => p.feat).map(renderProjectCard).join('');
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>
