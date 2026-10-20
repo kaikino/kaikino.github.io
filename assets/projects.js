@@ -7,7 +7,7 @@ window.PROJECTS = [
       'Verified in lock-step against a cycle-exact Python model across RTL, FPGA and gate-level netlists; 8 pin-arbitration safety properties proved by k-induction.',
       'Cut precheck DRC from 7.5 hours to 37 seconds to unblock CI.'] },
   { id: 'onebus', name: 'OneBusOnline', tags: ['web'], feat: true, year: '2025–26',
-    repo: 'OneBusOnline', url: 'https://onebus.online', stack: ['TypeScript', 'React', 'Leaflet', 'Express', 'Redis', 'Zod'],
+    repo: 'OneBusOnline', url: 'https://onebus.online', img: ['assets/img/onebus.jpg', 'onebus.online showing live stops across Seattle'], stack: ['TypeScript', 'React', 'Leaflet', 'Express', 'Redis', 'Zod'],
     blurb: 'A live Puget Sound transit PWA. React + Leaflet client over an Express backend-for-frontend that exposes 9 Zod-validated endpoints and keeps the upstream API key server-side.',
     bullets: ['Three-tier cache: HTTP stale-while-revalidate, Redis, and client IndexedDB.',
       'Cache keys are bounding boxes quantized to integer ticks so client and server always agree.'] },
@@ -25,11 +25,12 @@ window.PROJECTS = [
     bullets: [] },
   { id: 'filecity', name: 'File City', tags: ['systems', 'tools'], feat: true, year: '2026',
     repo: 'file-city', stack: ['Rust', 'Bevy', 'wgpu', 'Avian'],
+    imgs: [['assets/img/filecity-neon-night.jpg', 'Vertical neon filename and scrolling source on a night street'], ['assets/img/filecity-gallery-dusk.jpg', 'Image files as glowing storefront posters at dusk'], ['assets/img/filecity-alley-night.jpg', 'A back alley at night'], ['assets/img/filecity-aerial-day.jpg', 'Daytime rooftops: packed blocks, antennas and district signs']],
     blurb: 'A first-person 3D filesystem explorer. It scans a directory tree and generates a dense Tokyo-inspired city: directories become districts, files become buildings with neon signs bearing their real names, and everything can be read, viewed or thrown around in-engine.',
     bullets: ['Every building is seeded by its file\'s path hash; height scales with file size.',
       'Physically-based atmosphere with an 8-minute day/night cycle.'] },
   { id: 'kpen', name: 'kPen', tags: ['tools'], year: '2026',
-    repo: 'kPen', stack: ['C++17', 'SDL2', 'CMake', 'Homebrew'],
+    repo: 'kPen', img: ['assets/img/kpen.jpg', 'kPen on macOS editing the app icon'], stack: ['C++17', 'SDL2', 'CMake', 'Homebrew'],
     blurb: 'A lightweight raster drawing app. 10 cross-platform releases for macOS, Windows and Linux, installable with brew install --cask kaikino/kpen/kpen.',
     bullets: [] },
   { id: 'netlab', name: 'netlab', tags: ['networks', 'tools'], year: '2026',
@@ -55,7 +56,7 @@ window.PROJECTS = [
     blurb: 'A script for injecting gate delays into SystemVerilog modules, for watching glitches and races in simulation.',
     bullets: [] },
   { id: 'svsnake', name: 'sv-snake', tags: ['hardware'], year: '2026',
-    repo: 'sv-snake', stack: ['SystemVerilog', 'FPGA'],
+    repo: 'sv-snake', img: ['assets/img/sv-snake-diagram.jpg', 'sv-snake block diagram', 'contain'], stack: ['SystemVerilog', 'FPGA'],
     blurb: 'Snake & apples, entirely in hardware.',
     bullets: [] },
   { id: 'dance', name: 'Dance Trainer', tags: ['hardware', 'systems'], year: '2026 · WIP',
@@ -82,11 +83,23 @@ window.renderProjectCard = function (p) {
   const links = [];
   if (p.repo) links.push(`<a href="https://github.com/kaikino/${p.repo}" target="_blank" rel="noopener">repo ↗</a>`);
   if (p.url) links.push(`<a href="${p.url}" target="_blank" rel="noopener">live ↗</a>`);
+  const shot = ([src, alt, fit]) => `<a class="shot ${fit || ''}" href="${src}" data-alt="${alt}"><img src="${src}" alt="${alt}" loading="lazy"></a>`;
+  const media = p.imgs ? `<div class="shots">${p.imgs.map(shot).join('')}</div>` : p.img ? shot(p.img) : '';
   return `<article class="card ${p.feat ? 'feat' : ''}" data-tags="${p.tags.join(' ')}">
     <div class="tag">${p.tags.join(' · ')}</div><span class="corner">${p.year}</span>
-    <h3>${title}</h3><p>${p.blurb}</p>
+    <h3>${title}</h3>${media}<p>${p.blurb}</p>
     ${p.bullets.length ? `<ul>${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
     <div class="stack" style="margin-top:12px">${p.stack.map(s => `<span>${s}</span>`).join('')}</div>
     ${links.length ? `<div class="small mono" style="margin-top:12px;display:flex;gap:12px">${links.join('')}</div>` : ''}
   </article>`;
 };
+
+/* lightbox for screenshots */
+document.addEventListener('click', e => {
+  const a = e.target.closest('a.shot'); if (!a) return;
+  e.preventDefault();
+  let lb = document.getElementById('lightbox');
+  if (!lb) { lb = document.createElement('div'); lb.id = 'lightbox'; lb.innerHTML = '<img alt=""><div class="cap"></div>'; document.body.appendChild(lb);
+    lb.addEventListener('click', () => lb.classList.remove('on')); document.addEventListener('keydown', k => { if (k.key === 'Escape') lb.classList.remove('on'); }); }
+  lb.querySelector('img').src = a.getAttribute('href'); lb.querySelector('.cap').textContent = a.dataset.alt || ''; lb.classList.add('on');
+});
