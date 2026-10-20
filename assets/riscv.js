@@ -179,14 +179,14 @@ done:
   function render() {
     const CW = 22, RW = 20;
     const c0 = Math.max(1, cycle - CW + 1), rows = hist.filter(h => Object.keys(h.stages).some(c => +c >= c0)).slice(-RW);
-    let h = '<table class="pipe-t"><tr><th style="text-align:left">instruction</th>';
-    for (let c = c0; c <= cycle; c++) h += `<th class="${c === cycle ? 'cur' : ''}">${c}</th>`;
+    let h = '<table class="pipe-t"><caption class="sr-only">Pipeline stage of each instruction per cycle</caption><tr><th scope="col" style="text-align:left">instruction</th>';
+    for (let c = c0; c <= cycle; c++) h += `<th scope="col" class="${c === cycle ? 'cur' : ''}"><span class="sr-only">cycle </span>${c}</th>`;
     h += '</tr>';
     for (const r of rows) {
       h += `<tr><td class="ins"><span class="pc">${r.pc.toString(16).padStart(3, '0')}</span>${r.text}</td>`;
       for (let c = c0; c <= cycle; c++) {
         const s = r.stages[c]; const cls = s ? s.split(' ')[0] : '';
-        h += `<td class="${c === cycle ? 'cur' : ''}">${s ? `<span class="st ${cls} ${s.includes('fwd') ? 'fwd' : ''}">${cls === 'stall' ? '· ·' : cls === 'flush' ? 'X' : cls}</span>` : ''}</td>`;
+        h += `<td class="${c === cycle ? 'cur' : ''}">${s ? `<span class="st ${cls} ${s.includes('fwd') ? 'fwd' : ''}" title="${cls === 'stall' ? 'stalled' : cls === 'flush' ? 'squashed' : cls}${s.includes('fwd') ? ', operand forwarded' : ''}">${cls === 'stall' ? '· ·' : cls === 'flush' ? 'X' : cls}</span>` : ''}</td>`;
       }
       h += '</tr>';
     }
@@ -220,6 +220,9 @@ done:
   ui.src.addEventListener('input', () => { stop(); done = true; ui.err.textContent = 'edited — press reset or step to reassemble'; });
   ui.hex.onchange = render;
   ui.src.addEventListener('keydown', e => { if (e.key === 'Tab') { e.preventDefault(); const s = ui.src.selectionStart; ui.src.setRangeText('    ', s, ui.src.selectionEnd, 'end'); } });
-  document.addEventListener('keydown', e => { if (e.target === ui.src) return; if (e.key === ' ' ) { e.preventDefault(); ui.step.click(); } if (e.key === 'r') ui.reset.click(); if (e.key === 'Enter') ui.run.click(); });
+  document.addEventListener('keydown', e => {
+    if (e.target.closest('input,textarea,select,button,a,summary,[tabindex]') || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === ' ') { e.preventDefault(); ui.step.click(); } else if (e.key === 'r') ui.reset.click(); else if (e.key === 'Enter') ui.run.click();
+  });
   ui.src.value = PRESETS.sum; reset();
 })();

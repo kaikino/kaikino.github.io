@@ -1,33 +1,4 @@
-/* shared chrome: top bar, status bar, pcb trace canvas */
-(function () {
-  const pages = [
-    ['index.html', 'home'], ['projects.html', 'projects'],
-    ['experience.html', 'experience'], ['lab.html', 'lab']
-  ];
-  const here = (location.pathname.split('/').pop() || 'index.html');
-  const nav = pages.map(([h, l]) =>
-    `<a href="/${h}" class="${h === here ? 'active' : ''}">${l}</a>`).join('');
-  const top = document.createElement('header');
-  top.className = 'top';
-  top.innerHTML = `<div class="wrap">
-    <a class="brand" href="/"><b>kai</b><span class="at">@</span>kinoshita<span class="full">:~</span><span class="cur"></span></a>
-    <nav class="nav">${nav}</nav></div>`;
-  document.body.prepend(top);
-
-  const foot = document.createElement('footer');
-  foot.className = 'status';
-  foot.innerHTML = `<div class="wrap">
-    <span class="mode">NORMAL</span>
-    <span>kaikino.github.io</span>
-    <span class="cu">rv64i · 40 MHz</span>
-    <span class="spacer"></span>
-    <span><a href="https://github.com/kaikino">github</a></span>
-    <span><a href="mailto:kai.n.kinoshita@gmail.com">mail</a></span>
-    <span>utf-8</span>
-    <span>${new Date().getFullYear()}</span></div>`;
-  document.body.append(foot);
-})();
-
+/* site.js — progressive enhancement only; header/footer are static (see build.js) */
 /* ---------- PCB autorouter background ---------- */
 (function () {
   const c = document.getElementById('traces');
@@ -190,9 +161,10 @@
       }<a class="btn sm" href="projects.html?tag=${b.tag}">all ${b.tag} projects</a></div>`;
     };
     g.addEventListener('mouseenter', show); g.addEventListener('click', show); g.addEventListener('focus', show);
-    g.setAttribute('tabindex', '0');
+    g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); show(); } });
+    g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button'); g.setAttribute('aria-label', b.name + ' — show details');
   }
-  el('text', { x: 40, y: 345, style: 'font-size:8px;fill:#5c6888' }).textContent = 'KAI KINOSHITA · DIE REV A · 2026';
+  el('text', { x: 40, y: 345, style: 'font-size:8px;fill:#7d89a8' }).textContent = 'KAI KINOSHITA · DIE REV A · 2026';
   groups.rtl.dispatchEvent(new Event('mouseenter'));
   groups.rtl.parentNode.dispatchEvent(new Event('mouseenter'));
 })();

@@ -1,38 +1,65 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
+<!-- head -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kai Kinoshita</title>
-<meta name="description" content="Kai Kinoshita — Computer Engineering at the University of Washington. RTL, kernels, networks, and the occasional transit app.">
-<meta property="og:title" content="Kai Kinoshita"><meta property="og:description" content="Computer Engineering @ UW. RTL, kernels, networks, and the occasional transit app."><meta property="og:type" content="website"><meta property="og:url" content="https://kaikino.github.io/">
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/style.css">
+<meta name="description" content="Kai Kinoshita — Computer Engineering at the University of Washington. Taped-out ASICs, a RISC-V core, a Rust kernel, networking tools, and a transit app.">
+<link rel="canonical" href="https://kaikino.github.io/">
+<meta name="theme-color" content="#070b16">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Kai Kinoshita">
+<meta property="og:title" content="Kai Kinoshita"><meta property="og:description" content="Kai Kinoshita — Computer Engineering at the University of Washington. Taped-out ASICs, a RISC-V core, a Rust kernel, networking tools, and a transit app.">
+<meta property="og:url" content="https://kaikino.github.io/"><meta property="og:image" content="https://kaikino.github.io/assets/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kai Kinoshita — I build things from the gates up">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Kai Kinoshita">
+<meta name="twitter:description" content="Kai Kinoshita — Computer Engineering at the University of Washington. Taped-out ASICs, a RISC-V core, a Rust kernel, networking tools, and a transit app."><meta name="twitter:image" content="https://kaikino.github.io/assets/og.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/style.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+<!-- /head -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Kai Kinoshita","url":"https://kaikino.github.io/","email":"mailto:kai.n.kinoshita@gmail.com","image":"https://avatars.githubusercontent.com/u/44986338","jobTitle":"Software Engineer Intern","worksFor":{"@type":"Organization","name":"Rakuten Group, Inc."},"affiliation":{"@type":"CollegeOrUniversity","name":"University of Washington"},"address":{"@type":"PostalAddress","addressLocality":"Bellevue","addressRegion":"WA","addressCountry":"US"},"sameAs":["https://github.com/kaikino"],"knowsAbout":["Computer Engineering","RISC-V","SystemVerilog","ASIC design","Operating systems","Distributed systems","Computer networks","AWS","Rust","C++","Python","TypeScript"]}
+</script>
 </head>
 <body>
-<main>
-<section class="hero">
+<!-- nav -->
+<a class="skip" href="#main">skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/" aria-label="kai@kinoshita, home"><b>kai</b><span class="at">@</span>kinoshita<span class="full">:~</span><span class="cur" aria-hidden="true"></span></a>
+  <nav class="nav" aria-label="Main"><a href="/index.html" class="active" aria-current="page">home</a><a href="/projects.html">projects</a><a href="/experience.html">experience</a><a href="/lab.html">lab</a></nav>
+</div></header>
+<!-- /nav -->
+<main id="main">
+<section class="hero" aria-labelledby="hero-h">
   <canvas id="traces" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="eyebrow">kai kinoshita · computer engineering @ uw · bellevue, wa</div>
-    <h1>I build things<br>from the <span class="serif">gates</span> up.</h1>
+    <h1 id="hero-h">I build things<br>from the <span class="serif">gates</span> up.</h1>
     <p class="lede">Taped-out ASICs, a RISC-V core, a Rust kernel, a BGP speaker, a transit app people actually ride with. Currently a software engineer intern at Rakuten in Tokyo.</p>
     <div class="cta">
-      <a class="btn primary" href="projects.html">projects</a>
-      <a class="btn" href="experience.html">experience</a>
-      <a class="btn" href="lab.html">run the pipeline sim ▸</a>
+      <a class="btn primary" href="/projects.html">projects</a>
+      <a class="btn" href="/experience.html">experience</a>
+      <a class="btn" href="/lab.html">run the pipeline sim ▸</a>
       <a class="btn" href="https://github.com/kaikino" target="_blank" rel="noopener">github ↗</a>
     </div>
-    <div class="chips">
-      <span class="chip"><b>3.94</b> GPA</span>
-      <span class="chip"><b>4</b> AWS certs</span>
-      <span class="chip"><b>1</b> chip taped out</span>
-      <span class="chip"><b>8</b> languages, 1 favourite (it's Rust this month)</span>
-    </div>
+    <ul class="chips" aria-label="Quick facts">
+      <li class="chip"><b>3.94</b> GPA</li>
+      <li class="chip"><b>4</b> AWS certs</li>
+      <li class="chip"><b>1</b> chip taped out</li>
+      <li class="chip"><b>8</b> languages, 1 favourite (it's Rust this month)</li>
+    </ul>
   </div>
-  <div class="scrollhint">▼ scroll</div>
+  <div class="scrollhint" aria-hidden="true">▼ scroll</div>
 </section>
 
-<section class="block" id="about">
+<section class="block" id="about" aria-labelledby="about-h">
   <div class="wrap">
-    <div class="sec-head"><h2><span class="num">01</span>About</h2></div>
+    <div class="sec-head"><h2 id="about-h"><span class="num" aria-hidden="true">01</span>About</h2></div>
     <div class="grid c2">
       <div>
         <p>I'm a Computer Engineering student at the University of Washington (B.S. expected June 2028, Dean's List every quarter). I'm happiest at the boundary where software stops being abstract: writing RTL and watching it close timing, poking a kernel until the page tables behave, or getting two BGP speakers to agree on a route.</p>
@@ -46,23 +73,71 @@
         </dl>
       </div>
       <div class="floor">
-        <svg id="die" class="die" viewBox="0 0 400 400" role="img" aria-label="Interactive chip floorplan of skill areas"></svg>
-        <div id="floor-info" class="floor-info muted small">hover a block</div>
+        <svg id="die" class="die js-only" viewBox="0 0 400 400" role="group" aria-label="Chip floorplan of skill areas. Each block is a button that describes an area."></svg>
+        <div id="floor-info" class="floor-info muted small" aria-live="polite">
+          <noscript>Skill areas: RTL / ASIC, kernel and systems, distributed systems, networks, cloud, web, tools. See <a href="/projects.html">projects</a>.</noscript>
+          <span class="js-only">hover or focus a block</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="block" id="featured" style="padding-top:0">
+<section class="block" id="featured" style="padding-top:0" aria-labelledby="work-h">
   <div class="wrap">
-    <div class="sec-head"><h2><span class="num">02</span>Selected work</h2><a class="more" href="projects.html">all projects →</a></div>
-    <div class="grid c3" id="featured-grid"></div>
+    <div class="sec-head"><h2 id="work-h"><span class="num" aria-hidden="true">02</span>Selected work</h2><a class="more" href="/projects.html">all projects →</a></div>
+    <div class="grid c3" id="featured-grid">
+<!-- featured -->
+<article class="card feat" data-tags="hardware">
+    <div class="tag">hardware</div><span class="corner">2026</span>
+    <h3><a href="https://github.com/kaikino/core-asic" target="_blank" rel="noopener">Programmable Protocol Emulator ASIC</a></h3><p>A reprogrammable GPIO protocol emulator for Tiny Tapeout on IHP 130 nm, built for the Jane Street protocol-emulator challenge. Two deterministic PIO engines run 16-bit microprograms with cycle-exact timing, so UART, SPI, I²C, JTAG, CAN and 10 Mbit/s Manchester Ethernet are programs, not fixed blocks.</p>
+    <ul><li>Closes timing at 40 MHz with positive setup slack and zero DRC / LVS / antenna violations.</li><li>Verified in lock-step against a cycle-exact Python model across RTL, FPGA and gate-level netlists; 8 pin-arbitration safety properties proved by k-induction.</li><li>Cut precheck DRC from 7.5 hours to 37 seconds to unblock CI.</li></ul>
+    <div class="stack" style="margin-top:12px"><span>SystemVerilog</span><span>Python</span><span>cocotb</span><span>SymbiYosys</span><span>LibreLane</span></div>
+    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/core-asic" target="_blank" rel="noopener" aria-label="Programmable Protocol Emulator ASIC repository on GitHub">repo ↗</a></div>
+  </article>
+<article class="card feat" data-tags="web">
+    <div class="tag">web</div><span class="corner">2025–26</span>
+    <h3><a href="https://onebus.online" target="_blank" rel="noopener">OneBusOnline</a></h3><a class="shot " href="assets/img/onebus.webp" data-alt="onebus.online showing live stops across Seattle" aria-label="Enlarge: onebus.online showing live stops across Seattle"><img src="assets/img/onebus-640.webp" srcset="assets/img/onebus-640.webp 640w, assets/img/onebus.webp 1280w" sizes="(max-width: 700px) 90vw, 520px" width="1280" height="708" alt="onebus.online showing live stops across Seattle" loading="lazy"></a><p>A live Puget Sound transit PWA. React + Leaflet client over an Express backend-for-frontend that exposes 9 Zod-validated endpoints and keeps the upstream API key server-side.</p>
+    <ul><li>Three-tier cache: HTTP stale-while-revalidate, Redis, and client IndexedDB.</li><li>Cache keys are bounding boxes quantized to integer ticks so client and server always agree.</li></ul>
+    <div class="stack" style="margin-top:12px"><span>TypeScript</span><span>React</span><span>Leaflet</span><span>Express</span><span>Redis</span><span>Zod</span></div>
+    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/OneBusOnline" target="_blank" rel="noopener" aria-label="OneBusOnline repository on GitHub">repo ↗</a><a href="https://onebus.online" target="_blank" rel="noopener" aria-label="OneBusOnline live site">live ↗</a></div>
+  </article>
+<article class="card feat" data-tags="hardware">
+    <div class="tag">hardware</div><span class="corner">2026</span>
+    <h3><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener">KAISC-V</a></h3><p>A simple 64-bit RISC-V CPU in SystemVerilog. The pipeline simulator on the lab page of this site is a toy cousin of it.</p>
+    
+    <div class="stack" style="margin-top:12px"><span>SystemVerilog</span></div>
+    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener" aria-label="KAISC-V repository on GitHub">repo ↗</a></div>
+  </article>
+<article class="card feat" data-tags="systems">
+    <div class="tag">systems</div><span class="corner">2026</span>
+    <h3><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener">kv6</a></h3><p>An xv6-based teaching kernel for RISC-V, in Rust. Traps, paging, scheduling and syscalls without the C.</p>
+    
+    <div class="stack" style="margin-top:12px"><span>Rust</span><span>RISC-V</span></div>
+    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener" aria-label="kv6 repository on GitHub">repo ↗</a></div>
+  </article>
+<article class="card feat" data-tags="systems">
+    <div class="tag">systems</div><span class="corner">2026</span>
+    <h3><a href="https://github.com/kaikino/NES-emulator" target="_blank" rel="noopener">NES Emulator</a></h3><p>A Nintendo Entertainment System emulator with SDL2 video and audio. Runs NROM (mapper 0) cartridges; the 6502 core passes the Klaus Dormann functional test suite.</p>
+    
+    <div class="stack" style="margin-top:12px"><span>C++17</span><span>SDL2</span></div>
+    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/NES-emulator" target="_blank" rel="noopener" aria-label="NES Emulator repository on GitHub">repo ↗</a></div>
+  </article>
+<article class="card feat" data-tags="systems tools">
+    <div class="tag">systems · tools</div><span class="corner">2026</span>
+    <h3><a href="https://github.com/kaikino/file-city" target="_blank" rel="noopener">File City</a></h3><div class="shots"><a class="shot " href="assets/img/filecity-neon-night.webp" data-alt="Vertical neon filename and scrolling source on a night street" aria-label="Enlarge: Vertical neon filename and scrolling source on a night street"><img src="assets/img/filecity-neon-night-640.webp" srcset="assets/img/filecity-neon-night-640.webp 640w, assets/img/filecity-neon-night.webp 1280w" sizes="(max-width: 700px) 90vw, 520px" width="1280" height="720" alt="Vertical neon filename and scrolling source on a night street" loading="lazy"></a><a class="shot " href="assets/img/filecity-gallery-dusk.webp" data-alt="Image files as glowing storefront posters at dusk" aria-label="Enlarge: Image files as glowing storefront posters at dusk"><img src="assets/img/filecity-gallery-dusk-640.webp" srcset="assets/img/filecity-gallery-dusk-640.webp 640w, assets/img/filecity-gallery-dusk.webp 1280w" sizes="(max-width: 700px) 90vw, 520px" width="1280" height="720" alt="Image files as glowing storefront posters at dusk" loading="lazy"></a><a class="shot " href="assets/img/filecity-alley-night.webp" data-alt="A back alley at night" aria-label="Enlarge: A back alley at night"><img src="assets/img/filecity-alley-night-640.webp" srcset="assets/img/filecity-alley-night-640.webp 640w, assets/img/filecity-alley-night.webp 1280w" sizes="(max-width: 700px) 90vw, 520px" width="1280" height="720" alt="A back alley at night" loading="lazy"></a><a class="shot " href="assets/img/filecity-aerial-day.webp" data-alt="Daytime rooftops: packed blocks, antennas and district signs" aria-label="Enlarge: Daytime rooftops: packed blocks, antennas and district signs"><img src="assets/img/filecity-aerial-day-640.webp" srcset="assets/img/filecity-aerial-day-640.webp 640w, assets/img/filecity-aerial-day.webp 1280w" sizes="(max-width: 700px) 90vw, 520px" width="1280" height="720" alt="Daytime rooftops: packed blocks, antennas and district signs" loading="lazy"></a></div><p>A first-person 3D filesystem explorer. It scans a directory tree and generates a dense Tokyo-inspired city: directories become districts, files become buildings with neon signs bearing their real names, and everything can be read, viewed or thrown around in-engine.</p>
+    <ul><li>Every building is seeded by its file's path hash; height scales with file size.</li><li>Physically-based atmosphere with an 8-minute day/night cycle.</li></ul>
+    <div class="stack" style="margin-top:12px"><span>Rust</span><span>Bevy</span><span>wgpu</span><span>Avian</span></div>
+    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/file-city" target="_blank" rel="noopener" aria-label="File City repository on GitHub">repo ↗</a></div>
+  </article>
+<!-- /featured -->
+    </div>
   </div>
 </section>
 
-<section class="block" style="padding-top:0">
+<section class="block" style="padding-top:0" aria-labelledby="else-h">
   <div class="wrap">
-    <div class="sec-head"><h2><span class="num">03</span>Elsewhere</h2></div>
+    <div class="sec-head"><h2 id="else-h"><span class="num" aria-hidden="true">03</span>Elsewhere</h2></div>
     <div class="cta">
       <a class="btn" href="https://github.com/kaikino" target="_blank" rel="noopener">github.com/kaikino ↗</a>
       <a class="btn" href="https://onebus.online" target="_blank" rel="noopener">onebus.online ↗</a>
@@ -72,10 +147,19 @@
   </div>
 </section>
 </main>
-<script src="assets/projects.js"></script>
-<script>
-document.getElementById('featured-grid').innerHTML = PROJECTS.filter(p => p.feat).map(renderProjectCard).join('');
-</script>
-<script src="assets/site.js"></script>
+<!-- footer -->
+<footer class="status"><div class="wrap">
+  <span class="mode" aria-hidden="true">NORMAL</span>
+  <span>kaikino.github.io</span>
+  <span class="cu">rv64i · 40 MHz</span>
+  <span class="spacer"></span>
+  <span><a href="https://github.com/kaikino">github</a></span>
+  <span><a href="mailto:kai.n.kinoshita@gmail.com">mail</a></span>
+  <span>utf-8</span>
+  <span>2026</span>
+</div></footer>
+<!-- /footer -->
+<script src="/assets/data.js" defer></script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

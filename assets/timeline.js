@@ -1,27 +1,11 @@
 /* experience as a digital timing diagram */
 (function () {
-  const XP = [
-    { id: 'uw', sig: 'uw_ce', col: '#6ea8ff', from: '2024-09', to: '2028-06', org: 'University of Washington', role: 'B.S. Computer Engineering · expected June 2028', where: 'Seattle, WA',
-      when: 'Jun 2028 (expected)', bullets: ['3.94 GPA, Dean\'s List every quarter.', 'Coursework: Distributed Systems, Operating Systems, Computer Architecture, Networks, Database Systems.'] },
-    { id: 'aws', sig: 'aws', col: '#f2c14e', from: '2025-06', to: '2025-09', org: 'Amazon Web Services', role: 'Cloud Support Intern', where: 'Seattle, WA', when: 'Jun 2025 – Sep 2025',
-      bullets: ['Built a serverless document-ingestion pipeline of 9 Python Lambda functions orchestrated by Step Functions with parallel branches, catch states, and a Textract-to-Rekognition fallback so no upload is dropped; deployed as infrastructure-as-code via AWS SAM.',
-        'Routed S3 EventBridge triggers through SQS for asynchronous Textract polling, summarized long documents with Comprehend, and persisted text and metadata idempotently in DynamoDB across 10 file formats.',
-        'Isolated the data tier behind a multi-VPC design with private subnets and peering, enforced least-privilege IAM roles, and monitored the pipeline with CloudWatch dashboards and alarms.'] },
-    { id: 'ext', sig: 'extreme', col: '#7bd3b5', from: '2026-06', to: '2026-08', org: 'Extreme Networks', role: 'Systems Engineering Intern', where: 'Remote', when: 'Jun 2026 – Aug 2026',
-      bullets: ['Built a Cisco IOS → Extreme EXOS config transpiler as a scanner, parser, validator and generator pipeline covering VLANs, link aggregation, ACL policies and SPAN mirrors. 125 tests plus validation on physical switch stacks cut Layer 2 migration from hours to minutes per device; documented in English and Japanese for partner engineers.',
-        'Published xiq-client to PyPI: a typed ExtremeCloud IQ client with 130+ API operations, token auth, rate-limit-aware retries and pagination. 93 tests in CI on Python 3.9–3.13, replacing ~200 lines each across 20+ production scripts.'] },
-    { id: 'rak', sig: 'rakuten', col: '#cf3a52', from: '2026-08', to: null, org: 'Rakuten Group, Inc.', role: 'Software Engineer Intern', where: 'Tokyo, Japan', when: 'Aug 2026 – present',
-      bullets: ['Designed asynchronous REST APIs with FastAPI, Pydantic and SQLAlchemy; used SQL reflection to expose schema metadata dynamically and reduce bulk CRUD workflows from minutes to seconds.',
-        'Modeled a distributed CockroachDB backend with SQLModel and automated schema migrations with Alembic for microservices on Kubernetes.',
-        'Refactored the data-access layer onto functional dependency injection with AsyncSession and rebuilt the async test suite on pytest and httpx.AsyncClient, clearing context-management bottlenecks.'] },
-  ];
+  const XP = window.XP;
   const host = document.getElementById('timing'), tip = document.getElementById('tip'), list = document.getElementById('xp');
   if (!host) return;
 
-  // ---- entries list
-  list.innerHTML = XP.slice().reverse().map(x => `<div class="xp" id="xp-${x.id}">
-    <div class="when"><b>${x.when}</b>${x.where}</div>
-    <div><h3>${x.org} <span>· ${x.role}</span></h3><ul>${x.bullets.map(b => `<li>${b}</li>`).join('')}</ul></div></div>`).join('');
+  // ---- entries list (already rendered statically by build.js; render here only if missing)
+  if (!list.children.length) list.innerHTML = XP.slice().reverse().map(renderXP).join('');
 
   // ---- diagram
   const NS = 'http://www.w3.org/2000/svg';
@@ -31,7 +15,8 @@
   const L = 120, R = 48, W = 960, rowH = 44, top = 34;
   const H = top + rowH * (XP.length + 1) + 24;
   const X = t => L + (Math.min(Math.max(t, T0), T1) - T0) / (T1 - T0) * (W - L - R);
-  const svg = document.createElementNS(NS, 'svg'); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const svg = document.createElementNS(NS, 'svg'); svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('role', 'group'); svg.setAttribute('aria-label', 'Timing diagram of education and internships, January 2025 to January 2027. Each pulse is a button.');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const el = (n, a, p) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); (p || svg).appendChild(e); return e; };
   const txt = (x, y, s, cls, extra) => { const t = el('text', Object.assign({ x, y, class: cls || '' }, extra || {})); t.textContent = s; return t; };
 
@@ -40,7 +25,7 @@
     const x = X(t), isY = Math.abs(t - Math.round(t)) < 1e-9;
     el('line', { x1: x, y1: top - 8, x2: x, y2: H - 20, class: isY ? 'grid' : 'gridq' });
     if (isY) txt(x + 4, top - 12, String(Math.round(t)), 'lbl');
-    else txt(x + 3, top - 12, 'Q' + (Math.round((t % 1) * 4) + 1), '', { style: 'font-size:9px;fill:#5c6888' });
+    else txt(x + 3, top - 12, 'Q' + (Math.round((t % 1) * 4) + 1), '', { style: 'font-size:9px;fill:#7d89a8' });
   }
   // clk row: one pulse per quarter
   let y = top + rowH * 0.5; txt(8, y + 4, 'clk', 'lbl');
@@ -59,13 +44,15 @@
     el('rect', { x: a, y: hi - 6, width: Math.max(2, b - a), height: lo - hi + 12, class: 'hit' }, g);
     const p = el('path', { d: pathHi, class: 'sigline', stroke: x.col }, g);
     // draw-in animation
-    const len = 2000; p.setAttribute('stroke-dasharray', len); p.setAttribute('stroke-dashoffset', len);
-    p.animate([{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 1400, delay: 150 * i, fill: 'forwards', easing: 'ease-out' });
+    const len = 2000; if (!reduced) { p.setAttribute('stroke-dasharray', len); p.setAttribute('stroke-dashoffset', len);
+    p.animate([{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 1400, delay: 150 * i, fill: 'forwards', easing: 'ease-out' }); }
     txt(a + 6, hi - 6, `${x.org}`, '', { style: `font-size:10px;fill:${x.col};opacity:.9` });
     const on = () => { tip.innerHTML = `<b>${x.org}</b> — ${x.role} · ${x.when} · ${x.where}`; document.querySelectorAll('.xp').forEach(e => e.classList.toggle('on', e.id === 'xp-' + x.id)); g.classList.add('on'); };
     const off = () => { g.classList.remove('on'); };
-    g.addEventListener('mouseenter', on); g.addEventListener('mouseleave', off);
-    g.addEventListener('click', () => { on(); document.getElementById('xp-' + x.id).scrollIntoView({ behavior: 'smooth', block: 'center' }); });
+    g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button'); g.setAttribute('aria-label', `${x.org}, ${x.role}, ${x.when}`);
+    const go = () => { on(); document.getElementById('xp-' + x.id).scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' }); };
+    g.addEventListener('mouseenter', on); g.addEventListener('mouseleave', off); g.addEventListener('focus', on); g.addEventListener('focusin', on); g.addEventListener('blur', off);
+    g.addEventListener('click', go); g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); go(); } });
   });
   // now marker
   const nx = X(toT(null));

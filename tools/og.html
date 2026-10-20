@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{background:#070b16;color:#e8ebf4;font-family:'IBM Plex Sans',sans-serif;position:relative;
+ background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 0);background-size:28px 28px}
+.bar{position:absolute;left:0;right:0;top:0;height:52px;border-bottom:1px solid #1e2b4a;display:flex;align-items:center;padding:0 48px;font-family:'IBM Plex Mono',monospace;font-size:20px}
+.bar b{color:#d9a066;font-weight:500}.bar .at{color:#cf3a52}.bar .cur{display:inline-block;width:10px;height:22px;background:#7bd3b5;vertical-align:-3px;margin-left:4px}
+.main{position:absolute;left:48px;top:120px;width:700px}
+.eye{font-family:'IBM Plex Mono',monospace;color:#7bd3b5;font-size:20px;margin-bottom:18px}
+h1{font-size:84px;line-height:1;margin:0 0 26px;font-weight:600;letter-spacing:-.01em}
+h1 i{font-family:'Instrument Serif',serif;font-weight:400;color:#f1c38e}
+p{font-size:25px;line-height:1.4;color:#9aa5c0;margin:0;max-width:620px}
+.foot{position:absolute;left:0;right:0;bottom:0;height:44px;background:#0b1222;border-top:1px solid #1e2b4a;display:flex;font-family:'IBM Plex Mono',monospace;font-size:15px;color:#9aa5c0}
+.foot span{padding:12px 16px;border-right:1px solid #1e2b4a}.foot .m{background:#9b2335;color:#fff;font-weight:600}.foot .cu{color:#d9a066}
+svg{position:absolute;right:48px;top:96px;width:400px;height:400px;background:#0b1222;border:1px solid #1e2b4a;border-radius:8px}
+.blk{fill:#121d35;stroke:#2b3b63}.on{fill:#3a1620;stroke:#cf3a52}.pad{fill:#2b3b63}text{font-family:'IBM Plex Mono',monospace;font-size:10px;fill:#9aa5c0}
+</style></head><body>
+<div class="bar"><b>kai</b><span class="at">@</span>kinoshita:~<span class="cur"></span></div>
+<div class="main"><div class="eye">// kai kinoshita · computer engineering @ uw</div>
+<h1>I build things<br>from the <i>gates</i> up.</h1>
+<p>Taped-out ASICs, a RISC-V core, a Rust kernel, a BGP speaker, and a transit app people actually ride with.</p></div>
+<svg viewBox="0 0 400 400">
+<g id="pads"></g>
+<rect x="32" y="32" width="336" height="336" fill="none" stroke="#d9a066" stroke-dasharray="3 3" opacity=".5"/>
+<rect class="blk on" x="40" y="40" width="150" height="120" rx="2"/><text x="48" y="56">RTL / ASIC</text>
+<rect class="blk" x="200" y="40" width="160" height="70" rx="2"/><text x="208" y="56">KERNEL / SYSTEMS</text>
+<rect class="blk" x="200" y="120" width="160" height="40" rx="2"/><text x="208" y="136">DISTRIBUTED</text>
+<rect class="blk" x="40" y="170" width="110" height="90" rx="2"/><text x="48" y="186">NETWORKS</text>
+<rect class="blk" x="160" y="170" width="110" height="90" rx="2"/><text x="168" y="186">CLOUD</text>
+<rect class="blk" x="280" y="170" width="80" height="90" rx="2"/><text x="288" y="186">WEB</text>
+<rect class="blk" x="40" y="270" width="320" height="50" rx="2"/><text x="48" y="286">TOOLS &amp; RELEASES</text>
+<text x="40" y="345" style="font-size:8px;fill:#7d89a8">KAI KINOSHITA · DIE REV A · 2026</text>
+</svg>
+<div class="foot"><span class="m">NORMAL</span><span>kaikino.github.io</span><span class="cu">rv64i · 40 MHz</span></div>
+<script>
+const g=document.getElementById('pads');for(let i=0;i<26;i++){const p=14+i*14.3;for(const [x,y,w,h] of [[p,6,8,14],[p,380,8,14],[6,p,14,8],[380,p,14,8]]){const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('class','pad');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',w);r.setAttribute('height',h);g.appendChild(r);}}
+for(const rct of document.querySelectorAll('rect.blk')){const x=+rct.getAttribute('x'),y=+rct.getAttribute('y'),w=+rct.getAttribute('width'),h=+rct.getAttribute('height');for(let yy=y+26;yy<y+h-6;yy+=7){const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x',x+8);r.setAttribute('y',yy);r.setAttribute('width',w-16);r.setAttribute('height',3);r.setAttribute('fill','#1e2b4a');rct.parentNode.insertBefore(r,rct.nextSibling.nextSibling);}}
+</script>
+</body></html>

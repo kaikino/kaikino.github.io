@@ -1,17 +1,55 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-<title>404 · Kai Kinoshita</title>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/style.css">
+<!-- head -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Not found · Kai Kinoshita</title>
+<meta name="description" content="Page not found.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070b16">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Kai Kinoshita">
+<meta property="og:title" content="Not found · Kai Kinoshita"><meta property="og:description" content="Page not found.">
+<meta property="og:url" content="https://kaikino.github.io/404.html"><meta property="og:image" content="https://kaikino.github.io/assets/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kai Kinoshita — I build things from the gates up">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Not found · Kai Kinoshita">
+<meta name="twitter:description" content="Page not found."><meta name="twitter:image" content="https://kaikino.github.io/assets/og.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/style.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+<!-- /head -->
 </head>
 <body>
-<main class="wrap" style="padding-top:80px">
-  <div class="mono dim small">// trap: instruction page fault</div>
-  <h1 style="margin-top:8px">scause = <span class="ox">0xC</span></h1>
+<!-- nav -->
+<a class="skip" href="#main">skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/" aria-label="kai@kinoshita, home"><b>kai</b><span class="at">@</span>kinoshita<span class="full">:~</span><span class="cur" aria-hidden="true"></span></a>
+  <nav class="nav" aria-label="Main"><a href="/index.html">home</a><a href="/projects.html">projects</a><a href="/experience.html">experience</a><a href="/lab.html">lab</a></nav>
+</div></header>
+<!-- /nav -->
+<main id="main" class="wrap" style="padding-top:80px">
+  <div class="mono dim small" aria-hidden="true">// trap: instruction page fault</div>
+  <h1 style="margin-top:8px">404 <span class="muted">·</span> scause = <span class="ox">0xC</span></h1>
   <p class="muted">The page you asked for isn't mapped. stval = <code id="stval">/</code></p>
   <p><a class="btn" href="/">↩ return to user mode</a></p>
 </main>
+<!-- footer -->
+<footer class="status"><div class="wrap">
+  <span class="mode" aria-hidden="true">NORMAL</span>
+  <span>kaikino.github.io</span>
+  <span class="cu">rv64i · 40 MHz</span>
+  <span class="spacer"></span>
+  <span><a href="https://github.com/kaikino">github</a></span>
+  <span><a href="mailto:kai.n.kinoshita@gmail.com">mail</a></span>
+  <span>utf-8</span>
+  <span>2026</span>
+</div></footer>
+<!-- /footer -->
 <script>document.getElementById('stval').textContent=location.pathname</script>
-<script src="/assets/site.js"></script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

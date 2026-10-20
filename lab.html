@@ -1,37 +1,64 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
+<!-- head -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Lab · Kai Kinoshita</title>
 <meta name="description" content="An interactive 5-stage RISC-V pipeline simulator: write RV32I assembly, step it, and watch stalls, forwarding and flushes.">
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/style.css">
+<link rel="canonical" href="https://kaikino.github.io/lab.html">
+<meta name="theme-color" content="#070b16">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Kai Kinoshita">
+<meta property="og:title" content="Lab · Kai Kinoshita"><meta property="og:description" content="An interactive 5-stage RISC-V pipeline simulator: write RV32I assembly, step it, and watch stalls, forwarding and flushes.">
+<meta property="og:url" content="https://kaikino.github.io/lab.html"><meta property="og:image" content="https://kaikino.github.io/assets/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kai Kinoshita — I build things from the gates up">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Lab · Kai Kinoshita">
+<meta name="twitter:description" content="An interactive 5-stage RISC-V pipeline simulator: write RV32I assembly, step it, and watch stalls, forwarding and flushes."><meta name="twitter:image" content="https://kaikino.github.io/assets/og.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/style.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+<!-- /head -->
 </head>
 <body>
-<main class="wrap">
+<!-- nav -->
+<a class="skip" href="#main">skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/" aria-label="kai@kinoshita, home"><b>kai</b><span class="at">@</span>kinoshita<span class="full">:~</span><span class="cur" aria-hidden="true"></span></a>
+  <nav class="nav" aria-label="Main"><a href="/index.html">home</a><a href="/projects.html">projects</a><a href="/experience.html">experience</a><a href="/lab.html" class="active" aria-current="page">lab</a></nav>
+</div></header>
+<!-- /nav -->
+<main id="main" class="wrap">
   <div class="page-head">
     <h1>Lab: <span class="serif cu">a pipeline you can poke</span></h1>
     <p>A toy 5-stage in-order RISC-V pipeline (IF → ID → EX → MEM → WB) running a subset of RV32I, in your browser. Write some assembly, step it, and watch load-use stalls, forwarding and branch flushes happen in the diagram. It is a cartoon of <a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener">KAISC-V</a>, not the real thing.</p>
   </div>
+  <noscript><div class="panel" style="padding:16px;margin-bottom:18px"><b>This page needs JavaScript.</b> The simulator assembles and runs your program entirely in the browser, so there is nothing to show without it. Everything else on the site works without scripts.</div></noscript>
 
-  <div class="lab">
+  <div class="lab js-only">
     <div>
-      <div class="panel">
-        <div class="ph"><b>program.s</b><div class="right"><select id="preset" aria-label="preset">
+      <section class="panel" aria-labelledby="src-h">
+        <div class="ph"><b id="src-h">program.s</b><div class="right"><label class="sr-only" for="preset">Example program</label><select id="preset">
           <option value="sum">sum 1..10</option><option value="fib">fibonacci → memory</option><option value="hazard">hazards demo</option><option value="gcd">gcd by subtraction</option></select></div></div>
         <div class="pb">
-          <textarea id="src" class="code" spellcheck="false" aria-label="assembly source"></textarea>
+          <label class="sr-only" for="src">Assembly source</label>
+          <textarea id="src" class="code" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
           <div class="ctrl">
-            <button id="b-step" class="primary" title="space">step ▸</button>
-            <button id="b-run" title="enter">▶ run</button>
-            <button id="b-reset" title="r">⟲ reset</button>
-            <label>speed <input id="speed" type="range" min="1" max="30" value="6"></label>
-            <label><input id="hex" type="checkbox"> hex</label>
+            <button type="button" id="b-step" class="primary" title="space" aria-keyshortcuts="Space">step ▸</button>
+            <button type="button" id="b-run" title="enter" aria-keyshortcuts="Enter">▶ run</button>
+            <button type="button" id="b-reset" title="r" aria-keyshortcuts="r">⟲ reset</button>
+            <label for="speed">speed <input id="speed" type="range" min="1" max="30" value="6" aria-label="Run speed, cycles per second"></label>
+            <label for="hex"><input id="hex" type="checkbox"> hex</label>
           </div>
-          <div class="err" id="err"></div>
+          <div class="err" id="err" role="status" aria-live="polite"></div>
         </div>
-      </div>
+      </section>
 
-      <div class="panel help" style="margin-top:16px">
-        <div class="ph"><b>notes</b></div>
+      <section class="panel help" style="margin-top:16px" aria-labelledby="notes-h">
+        <div class="ph"><b id="notes-h">notes</b></div>
         <div class="pb">
           <p style="margin-top:0">Keys: <code>space</code> step, <code>enter</code> run/pause, <code>r</code> reset. Memory is 64 words, byte-addressed (<code>0..252</code>). <code>ecall</code> halts.</p>
           <p>Model: registers read in EX with full forwarding from EX/MEM and MEM/WB (<span class="amber">↯</span> marks a forwarded operand). A load followed immediately by a consumer stalls one cycle (<code>· ·</code>). Branches and jumps resolve in EX; the one wrong-path instruction behind them is squashed (<span class="ox">X</span>).</p>
@@ -47,26 +74,38 @@
             </table>
           </details>
         </div>
-      </div>
+      </section>
     </div>
 
     <div>
-      <div class="panel">
-        <div class="ph"><b>pipeline</b><div class="right stat" id="stat"></div></div>
-        <div class="pb pipe" id="pipe"></div>
-      </div>
-      <div class="panel" style="margin-top:16px">
-        <div class="ph"><b>waveform</b><span>clk / stall / flush / pc</span></div>
-        <div class="pb wave" id="wave"></div>
-      </div>
+      <section class="panel" aria-labelledby="pipe-h">
+        <div class="ph"><b id="pipe-h">pipeline</b><div class="right stat" id="stat"></div></div>
+        <div class="pb pipe" id="pipe" tabindex="0" aria-label="Pipeline diagram, scrollable"></div>
+      </section>
+      <section class="panel" style="margin-top:16px" aria-labelledby="wave-h">
+        <div class="ph"><b id="wave-h">waveform</b><span>clk / stall / flush / pc</span></div>
+        <div class="pb wave" id="wave" tabindex="0" aria-label="Waveform of clock, stall, flush and program counter, scrollable"></div>
+      </section>
       <div class="grid c2" style="margin-top:16px">
-        <div class="panel"><div class="ph"><b>registers</b><span>x0–x31, ABI names</span></div><div class="pb regs" id="regs"></div></div>
-        <div class="panel"><div class="ph"><b>memory</b><span>first 32 words</span></div><div class="pb memv" id="mem"></div></div>
+        <section class="panel" aria-labelledby="regs-h"><div class="ph"><b id="regs-h">registers</b><span>x0–x31, ABI names</span></div><div class="pb regs" id="regs"></div></section>
+        <section class="panel" aria-labelledby="mem-h"><div class="ph"><b id="mem-h">memory</b><span>first 32 words</span></div><div class="pb memv" id="mem"></div></section>
       </div>
     </div>
   </div>
 </main>
-<script src="assets/riscv.js"></script>
-<script src="assets/site.js"></script>
+<!-- footer -->
+<footer class="status"><div class="wrap">
+  <span class="mode" aria-hidden="true">NORMAL</span>
+  <span>kaikino.github.io</span>
+  <span class="cu">rv64i · 40 MHz</span>
+  <span class="spacer"></span>
+  <span><a href="https://github.com/kaikino">github</a></span>
+  <span><a href="mailto:kai.n.kinoshita@gmail.com">mail</a></span>
+  <span>utf-8</span>
+  <span>2026</span>
+</div></footer>
+<!-- /footer -->
+<script src="/assets/riscv.js" defer></script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

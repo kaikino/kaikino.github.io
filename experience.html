@@ -1,32 +1,86 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
+<!-- head -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Experience · Kai Kinoshita</title>
 <meta name="description" content="Internships and education of Kai Kinoshita: Rakuten, Extreme Networks, Amazon Web Services, University of Washington.">
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/style.css">
+<link rel="canonical" href="https://kaikino.github.io/experience.html">
+<meta name="theme-color" content="#070b16">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Kai Kinoshita">
+<meta property="og:title" content="Experience · Kai Kinoshita"><meta property="og:description" content="Internships and education of Kai Kinoshita: Rakuten, Extreme Networks, Amazon Web Services, University of Washington.">
+<meta property="og:url" content="https://kaikino.github.io/experience.html"><meta property="og:image" content="https://kaikino.github.io/assets/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kai Kinoshita — I build things from the gates up">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Experience · Kai Kinoshita">
+<meta name="twitter:description" content="Internships and education of Kai Kinoshita: Rakuten, Extreme Networks, Amazon Web Services, University of Washington."><meta name="twitter:image" content="https://kaikino.github.io/assets/og.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/style.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+<!-- /head -->
 </head>
 <body>
-<main class="wrap">
+<!-- nav -->
+<a class="skip" href="#main">skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/" aria-label="kai@kinoshita, home"><b>kai</b><span class="at">@</span>kinoshita<span class="full">:~</span><span class="cur" aria-hidden="true"></span></a>
+  <nav class="nav" aria-label="Main"><a href="/index.html">home</a><a href="/projects.html">projects</a><a href="/experience.html" class="active" aria-current="page">experience</a><a href="/lab.html">lab</a></nav>
+</div></header>
+<!-- /nav -->
+<main id="main" class="wrap">
   <div class="page-head">
     <h1>Experience</h1>
-    <p>Read it like a timing diagram: each row is a signal, high while I was there. Hover a pulse for details.</p>
+    <p>Read it like a timing diagram: each row is a signal, high while I was there. Hover or tab to a pulse for details; the full entries are below.</p>
   </div>
-  <div class="timing" id="timing"></div>
-  <div class="tip" id="tip">hover a signal…</div>
+  <div class="timing js-only" id="timing"></div>
+  <div class="tip js-only" id="tip" aria-live="polite">hover a signal…</div>
+  <noscript><p class="muted small mono">The interactive timing diagram needs JavaScript; the entries below are the same information.</p></noscript>
 
-  <div id="xp"></div>
+  <div id="xp">
+<!-- xp -->
+<article class="xp" id="xp-rak">
+    <div class="when"><b>Aug 2026 – present</b>Tokyo, Japan</div>
+    <div><h2>Rakuten Group, Inc. <span>· Software Engineer Intern</span></h2><ul><li>Designed asynchronous REST APIs with FastAPI, Pydantic and SQLAlchemy; used SQL reflection to expose schema metadata dynamically and reduce bulk CRUD workflows from minutes to seconds.</li><li>Modeled a distributed CockroachDB backend with SQLModel and automated schema migrations with Alembic for microservices on Kubernetes.</li><li>Refactored the data-access layer onto functional dependency injection with AsyncSession and rebuilt the async test suite on pytest and httpx.AsyncClient, clearing context-management bottlenecks.</li></ul></div></article>
+<article class="xp" id="xp-ext">
+    <div class="when"><b>Jun 2026 – Aug 2026</b>Remote</div>
+    <div><h2>Extreme Networks <span>· Systems Engineering Intern</span></h2><ul><li>Built a Cisco IOS → Extreme EXOS config transpiler as a scanner, parser, validator and generator pipeline covering VLANs, link aggregation, ACL policies and SPAN mirrors. 125 tests plus validation on physical switch stacks cut Layer 2 migration from hours to minutes per device; documented in English and Japanese for partner engineers.</li><li>Published xiq-client to PyPI: a typed ExtremeCloud IQ client with 130+ API operations, token auth, rate-limit-aware retries and pagination. 93 tests in CI on Python 3.9–3.13, replacing ~200 lines each across 20+ production scripts.</li></ul></div></article>
+<article class="xp" id="xp-aws">
+    <div class="when"><b>Jun 2025 – Sep 2025</b>Seattle, WA</div>
+    <div><h2>Amazon Web Services <span>· Cloud Support Intern</span></h2><ul><li>Built a serverless document-ingestion pipeline of 9 Python Lambda functions orchestrated by Step Functions with parallel branches, catch states, and a Textract-to-Rekognition fallback so no upload is dropped; deployed as infrastructure-as-code via AWS SAM.</li><li>Routed S3 EventBridge triggers through SQS for asynchronous Textract polling, summarized long documents with Comprehend, and persisted text and metadata idempotently in DynamoDB across 10 file formats.</li><li>Isolated the data tier behind a multi-VPC design with private subnets and peering, enforced least-privilege IAM roles, and monitored the pipeline with CloudWatch dashboards and alarms.</li></ul></div></article>
+<article class="xp" id="xp-uw">
+    <div class="when"><b>expected June 2028</b>Seattle, WA</div>
+    <div><h2>University of Washington <span>· B.S. Computer Engineering</span></h2><ul><li>3.94 GPA, Dean's List every quarter.</li><li>Coursework: Distributed Systems, Operating Systems, Computer Architecture, Networks, Database Systems.</li></ul></div></article>
+<!-- /xp -->
+  </div>
 
-  <section class="block" style="padding-bottom:0">
-    <div class="sec-head"><h2>Certifications</h2></div>
-    <div class="certs">
-      <span>AWS Solutions Architect – Professional</span>
-      <span>AWS Developer – Associate</span>
-      <span>AWS Data Engineer – Associate</span>
-      <span>AWS Machine Learning Engineer – Associate</span>
-    </div>
+  <section class="block" style="padding-bottom:0" aria-labelledby="certs-h">
+    <div class="sec-head"><h2 id="certs-h">Certifications</h2></div>
+    <ul class="certs" aria-label="AWS certifications">
+      <li>AWS Solutions Architect – Professional</li>
+      <li>AWS Developer – Associate</li>
+      <li>AWS Data Engineer – Associate</li>
+      <li>AWS Machine Learning Engineer – Associate</li>
+    </ul>
   </section>
 </main>
-<script src="assets/timeline.js"></script>
-<script src="assets/site.js"></script>
+<!-- footer -->
+<footer class="status"><div class="wrap">
+  <span class="mode" aria-hidden="true">NORMAL</span>
+  <span>kaikino.github.io</span>
+  <span class="cu">rv64i · 40 MHz</span>
+  <span class="spacer"></span>
+  <span><a href="https://github.com/kaikino">github</a></span>
+  <span><a href="mailto:kai.n.kinoshita@gmail.com">mail</a></span>
+  <span>utf-8</span>
+  <span>2026</span>
+</div></footer>
+<!-- /footer -->
+<script src="/assets/data.js" defer></script>
+<script src="/assets/timeline.js" defer></script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
