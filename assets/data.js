@@ -90,9 +90,9 @@ window.renderProjectCard = function (p, level) {
   return `<article class="card ${p.feat ? 'feat' : ''}" data-tags="${p.tags.join(' ')}">
     <div class="tag">${p.tags.join(' · ')}</div><span class="corner">${p.year}</span>
     <${H}>${title}</${H}>${media}<p>${p.blurb}</p>
-    ${p.bullets.length ? `<ul>${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
-    <div class="stack" style="margin-top:12px">${p.stack.map(s => `<span>${s}</span>`).join('')}</div>
-    ${links.length ? `<div class="small mono" style="margin-top:12px;display:flex;gap:12px">${links.join('')}</div>` : ''}
+    ${p.bullets.length ? `<details class="more"><summary>details</summary><ul>${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul></details>` : ''}
+    <div class="stack" style="margin-top:8px">${p.stack.map(s => `<span>${s}</span>`).join('')}</div>
+    ${links.length ? `<div class="small mono" style="margin-top:10px;display:flex;gap:12px">${links.join('')}</div>` : ''}
   </article>`;
 };
 

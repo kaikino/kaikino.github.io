@@ -6,7 +6,7 @@
   const ctx = c.getContext('2d');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const G = 16;                       // routing grid
-  const COLORS = ['#d9a066', '#d9a066', '#d9a066', '#7bd3b5', '#cf3a52', '#6ea8ff'];
+  const COLORS = ['#d9a066', '#d9a066', '#d9a066', '#d9a066', '#d9a066', '#7bd3b5'];
   let W = 0, H = 0, traces = [], last = 0, target = 0;
 
   function resize() {
@@ -14,7 +14,7 @@
     W = c.clientWidth; H = c.clientHeight;
     c.width = W * dpr; c.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    target = Math.max(10, Math.floor((W * H) / 24000));
+    target = Math.max(6, Math.floor((W * H) / 70000));
   }
   const snap = v => Math.round(v / G) * G;
   const rnd = (a, b) => a + Math.random() * (b - a);
@@ -41,8 +41,8 @@
     }
     if (pts.length < 2) return null;
     return {
-      pts, total, prog: 0, speed: rnd(90, 220), alpha: 0, life: 0,
-      hold: rnd(2.5, 6), col: COLORS[Math.floor(Math.random() * COLORS.length)],
+      pts, total, prog: 0, speed: rnd(45, 100), alpha: 0, life: 0,
+      hold: rnd(5, 10), col: COLORS[Math.floor(Math.random() * COLORS.length)],
       pad: Math.random() < 0.7 ? 'via' : 'pad', dead: false
     };
   }
@@ -73,8 +73,8 @@
       else { ctx.fillStyle = t.col; ctx.fillRect(e.x - 4, e.y - 4, 8, 8); }
     } else {
       ctx.globalAlpha = Math.min(1, t.alpha * 2);
-      ctx.fillStyle = '#fff'; ctx.shadowColor = t.col; ctx.shadowBlur = 10;
-      ctx.beginPath(); ctx.arc(head.x, head.y, 2, 0, 7); ctx.fill(); ctx.shadowBlur = 0;
+      ctx.fillStyle = '#fff'; ctx.shadowColor = t.col; ctx.shadowBlur = 6;
+      ctx.beginPath(); ctx.arc(head.x, head.y, 1.6, 0, 7); ctx.fill(); ctx.shadowBlur = 0;
     }
     ctx.globalAlpha = 1;
   }
@@ -85,8 +85,8 @@
     while (traces.length < target) { const t = newTrace(); if (t) traces.push(t); else break; }
     for (const t of traces) {
       t.life += dt;
-      if (t.prog < t.total) { t.prog += t.speed * dt; t.alpha = Math.min(0.55, t.alpha + dt); }
-      else { t.hold -= dt; if (t.hold < 0) t.alpha -= dt * 0.5; }
+      if (t.prog < t.total) { t.prog += t.speed * dt; t.alpha = Math.min(0.38, t.alpha + dt * 0.5); }
+      else { t.hold -= dt; if (t.hold < 0) t.alpha -= dt * 0.25; }
       if (t.alpha <= 0 && t.prog >= t.total) t.dead = true;
       drawTrace(t);
     }

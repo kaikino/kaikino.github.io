@@ -52,120 +52,120 @@
 <article class="card feat" data-tags="hardware">
     <div class="tag">hardware</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/core-asic" target="_blank" rel="noopener">Programmable Protocol Emulator ASIC</a></h2><p>A reprogrammable GPIO protocol emulator for Tiny Tapeout on IHP 130 nm, built for the Jane Street protocol-emulator challenge. Two deterministic PIO engines run 16-bit microprograms with cycle-exact timing, so UART, SPI, I²C, JTAG, CAN and 10 Mbit/s Manchester Ethernet are programs, not fixed blocks.</p>
-    <ul><li>Closes timing at 40 MHz with positive setup slack and zero DRC / LVS / antenna violations.</li><li>Verified in lock-step against a cycle-exact Python model across RTL, FPGA and gate-level netlists; 8 pin-arbitration safety properties proved by k-induction.</li><li>Cut precheck DRC from 7.5 hours to 37 seconds to unblock CI.</li></ul>
-    <div class="stack" style="margin-top:12px"><span>SystemVerilog</span><span>Python</span><span>cocotb</span><span>SymbiYosys</span><span>LibreLane</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/core-asic" target="_blank" rel="noopener" aria-label="Programmable Protocol Emulator ASIC repository on GitHub">repo ↗</a></div>
+    <details class="more"><summary>details</summary><ul><li>Closes timing at 40 MHz with positive setup slack and zero DRC / LVS / antenna violations.</li><li>Verified in lock-step against a cycle-exact Python model across RTL, FPGA and gate-level netlists; 8 pin-arbitration safety properties proved by k-induction.</li><li>Cut precheck DRC from 7.5 hours to 37 seconds to unblock CI.</li></ul></details>
+    <div class="stack" style="margin-top:8px"><span>SystemVerilog</span><span>Python</span><span>cocotb</span><span>SymbiYosys</span><span>LibreLane</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/core-asic" target="_blank" rel="noopener" aria-label="Programmable Protocol Emulator ASIC repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card feat" data-tags="web">
     <div class="tag">web</div><span class="corner">2025–26</span>
     <h2><a href="https://onebus.online" target="_blank" rel="noopener">OneBusOnline</a></h2><a class="shot " href="assets/img/onebus.webp" data-alt="onebus.online showing live stops across Seattle" aria-label="Enlarge: onebus.online showing live stops across Seattle"><img src="assets/img/onebus-640.webp" srcset="assets/img/onebus-640.webp 640w, assets/img/onebus.webp 1280w" sizes="(max-width: 700px) 90vw, 520px" width="1280" height="708" alt="onebus.online showing live stops across Seattle" loading="lazy"></a><p>A live Puget Sound transit PWA. React + Leaflet client over an Express backend-for-frontend that exposes 9 Zod-validated endpoints and keeps the upstream API key server-side.</p>
-    <ul><li>Three-tier cache: HTTP stale-while-revalidate, Redis, and client IndexedDB.</li><li>Cache keys are bounding boxes quantized to integer ticks so client and server always agree.</li></ul>
-    <div class="stack" style="margin-top:12px"><span>TypeScript</span><span>React</span><span>Leaflet</span><span>Express</span><span>Redis</span><span>Zod</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/OneBusOnline" target="_blank" rel="noopener" aria-label="OneBusOnline repository on GitHub">repo ↗</a><a href="https://onebus.online" target="_blank" rel="noopener" aria-label="OneBusOnline live site">live ↗</a></div>
+    <details class="more"><summary>details</summary><ul><li>Three-tier cache: HTTP stale-while-revalidate, Redis, and client IndexedDB.</li><li>Cache keys are bounding boxes quantized to integer ticks so client and server always agree.</li></ul></details>
+    <div class="stack" style="margin-top:8px"><span>TypeScript</span><span>React</span><span>Leaflet</span><span>Express</span><span>Redis</span><span>Zod</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/OneBusOnline" target="_blank" rel="noopener" aria-label="OneBusOnline repository on GitHub">repo ↗</a><a href="https://onebus.online" target="_blank" rel="noopener" aria-label="OneBusOnline live site">live ↗</a></div>
   </article>
 <article class="card feat" data-tags="hardware">
     <div class="tag">hardware</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener">KAISC-V</a></h2><p>A simple 64-bit RISC-V CPU in SystemVerilog. The pipeline simulator on the lab page of this site is a toy cousin of it.</p>
     
-    <div class="stack" style="margin-top:12px"><span>SystemVerilog</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener" aria-label="KAISC-V repository on GitHub">repo ↗</a></div>
+    <div class="stack" style="margin-top:8px"><span>SystemVerilog</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/KAISC-V" target="_blank" rel="noopener" aria-label="KAISC-V repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card feat" data-tags="systems">
     <div class="tag">systems</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener">kv6</a></h2><p>An xv6-based teaching kernel for RISC-V, in Rust. Traps, paging, scheduling and syscalls without the C.</p>
     
-    <div class="stack" style="margin-top:12px"><span>Rust</span><span>RISC-V</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener" aria-label="kv6 repository on GitHub">repo ↗</a></div>
+    <div class="stack" style="margin-top:8px"><span>Rust</span><span>RISC-V</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/kv6" target="_blank" rel="noopener" aria-label="kv6 repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card feat" data-tags="systems">
     <div class="tag">systems</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/NES-emulator" target="_blank" rel="noopener">NES Emulator</a></h2><p>A Nintendo Entertainment System emulator with SDL2 video and audio. Runs NROM (mapper 0) cartridges; the 6502 core passes the Klaus Dormann functional test suite.</p>
     
-    <div class="stack" style="margin-top:12px"><span>C++17</span><span>SDL2</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/NES-emulator" target="_blank" rel="noopener" aria-label="NES Emulator repository on GitHub">repo ↗</a></div>
+    <div class="stack" style="margin-top:8px"><span>C++17</span><span>SDL2</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/NES-emulator" target="_blank" rel="noopener" aria-label="NES Emulator repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card feat" data-tags="systems tools">
     <div class="tag">systems · tools</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/file-city" target="_blank" rel="noopener">File City</a></h2><div class="shots"><a class="shot " href="assets/img/filecity-neon-night.webp" data-alt="Vertical neon filename and scrolling source on a night street" aria-label="Enlarge: Vertical neon filename and scrolling source on a night street"><img src="assets/img/filecity-neon-night-640.webp" srcset="assets/img/filecity-neon-night-640.webp 640w, assets/img/filecity-neon-night.webp 1280w" sizes="(max-width: 700px) 90vw, 520px" width="1280" height="720" alt="Vertical neon filename and scrolling source on a night street" loading="lazy"></a><a class="shot " href="assets/img/filecity-gallery-dusk.webp" data-alt="Image files as glowing storefront posters at dusk" aria-label="Enlarge: Image files as glowing storefront posters at dusk"><img src="assets/img/filecity-gallery-dusk-640.webp" srcset="assets/img/filecity-gallery-dusk-640.webp 640w, assets/img/filecity-gallery-dusk.webp 1280w" sizes="(max-width: 700px) 90vw, 520px" width="1280" height="720" alt="Image files as glowing storefront posters at dusk" loading="lazy"></a><a class="shot " href="assets/img/filecity-alley-night.webp" data-alt="A back alley at night" aria-label="Enlarge: A back alley at night"><img src="assets/img/filecity-alley-night-640.webp" srcset="assets/img/filecity-alley-night-640.webp 640w, assets/img/filecity-alley-night.webp 1280w" sizes="(max-width: 700px) 90vw, 520px" width="1280" height="720" alt="A back alley at night" loading="lazy"></a><a class="shot " href="assets/img/filecity-aerial-day.webp" data-alt="Daytime rooftops: packed blocks, antennas and district signs" aria-label="Enlarge: Daytime rooftops: packed blocks, antennas and district signs"><img src="assets/img/filecity-aerial-day-640.webp" srcset="assets/img/filecity-aerial-day-640.webp 640w, assets/img/filecity-aerial-day.webp 1280w" sizes="(max-width: 700px) 90vw, 520px" width="1280" height="720" alt="Daytime rooftops: packed blocks, antennas and district signs" loading="lazy"></a></div><p>A first-person 3D filesystem explorer. It scans a directory tree and generates a dense Tokyo-inspired city: directories become districts, files become buildings with neon signs bearing their real names, and everything can be read, viewed or thrown around in-engine.</p>
-    <ul><li>Every building is seeded by its file's path hash; height scales with file size.</li><li>Physically-based atmosphere with an 8-minute day/night cycle.</li></ul>
-    <div class="stack" style="margin-top:12px"><span>Rust</span><span>Bevy</span><span>wgpu</span><span>Avian</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/file-city" target="_blank" rel="noopener" aria-label="File City repository on GitHub">repo ↗</a></div>
+    <details class="more"><summary>details</summary><ul><li>Every building is seeded by its file's path hash; height scales with file size.</li><li>Physically-based atmosphere with an 8-minute day/night cycle.</li></ul></details>
+    <div class="stack" style="margin-top:8px"><span>Rust</span><span>Bevy</span><span>wgpu</span><span>Avian</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/file-city" target="_blank" rel="noopener" aria-label="File City repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="tools">
     <div class="tag">tools</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/kPen" target="_blank" rel="noopener">kPen</a></h2><a class="shot " href="assets/img/kpen.webp" data-alt="kPen on macOS editing the app icon" aria-label="Enlarge: kPen on macOS editing the app icon"><img src="assets/img/kpen-640.webp" srcset="assets/img/kpen-640.webp 640w, assets/img/kpen.webp 1200w" sizes="(max-width: 700px) 90vw, 520px" width="1200" height="779" alt="kPen on macOS editing the app icon" loading="lazy"></a><p>A lightweight raster drawing app. 10 cross-platform releases for macOS, Windows and Linux, installable with brew install --cask kaikino/kpen/kpen.</p>
     
-    <div class="stack" style="margin-top:12px"><span>C++17</span><span>SDL2</span><span>CMake</span><span>Homebrew</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/kPen" target="_blank" rel="noopener" aria-label="kPen repository on GitHub">repo ↗</a></div>
+    <div class="stack" style="margin-top:8px"><span>C++17</span><span>SDL2</span><span>CMake</span><span>Homebrew</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/kPen" target="_blank" rel="noopener" aria-label="kPen repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="networks tools">
     <div class="tag">networks · tools</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/netlab" target="_blank" rel="noopener">netlab</a></h2><p>23 hands-on Linux networking labs inside one container. Hosts, routers and switches are network namespaces, cables are veth pairs, and lab check grades you by inspecting live kernel state.</p>
-    <ul><li>Covers addressing, bridging, routing, sockets, packet capture, iptables/NAT and multi-fault troubleshooting.</li><li>Values are randomised per run; a self-test builds every lab, confirms it fails, applies the solution and confirms it passes.</li></ul>
-    <div class="stack" style="margin-top:12px"><span>Python</span><span>Docker</span><span>Linux netns</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/netlab" target="_blank" rel="noopener" aria-label="netlab repository on GitHub">repo ↗</a></div>
+    <details class="more"><summary>details</summary><ul><li>Covers addressing, bridging, routing, sockets, packet capture, iptables/NAT and multi-fault troubleshooting.</li><li>Values are randomised per run; a self-test builds every lab, confirms it fails, applies the solution and confirms it passes.</li></ul></details>
+    <div class="stack" style="margin-top:8px"><span>Python</span><span>Docker</span><span>Linux netns</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/netlab" target="_blank" rel="noopener" aria-label="netlab repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="networks">
     <div class="tag">networks</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/cisco-exos-translator" target="_blank" rel="noopener">Cisco → EXOS Translator</a></h2><p>A Cisco IOS to Extreme EXOS config transpiler built as a scanner → parser → validator → generator pipeline, covering VLANs, link aggregation, ACL policies and SPAN mirrors. Built during my Extreme Networks internship.</p>
-    <ul><li>125 tests plus validation on physical switch stacks; cut Layer 2 migration from hours to minutes per device.</li><li>Documented in English and Japanese for partner engineers.</li></ul>
-    <div class="stack" style="margin-top:12px"><span>Python</span><span>pytest</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/cisco-exos-translator" target="_blank" rel="noopener" aria-label="Cisco → EXOS Translator repository on GitHub">repo ↗</a></div>
+    <details class="more"><summary>details</summary><ul><li>125 tests plus validation on physical switch stacks; cut Layer 2 migration from hours to minutes per device.</li><li>Documented in English and Japanese for partner engineers.</li></ul></details>
+    <div class="stack" style="margin-top:8px"><span>Python</span><span>pytest</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/cisco-exos-translator" target="_blank" rel="noopener" aria-label="Cisco → EXOS Translator repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="networks tools">
     <div class="tag">networks · tools</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/xiq-client" target="_blank" rel="noopener">xiq-client</a></h2><p>A typed ExtremeCloud IQ client with 130+ API operations, token auth, rate-limit-aware retries and pagination. Published to PyPI; 93 tests in CI on Python 3.9–3.13.</p>
     
-    <div class="stack" style="margin-top:12px"><span>Python</span><span>PyPI</span><span>GitHub Actions</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/xiq-client" target="_blank" rel="noopener" aria-label="xiq-client repository on GitHub">repo ↗</a></div>
+    <div class="stack" style="margin-top:8px"><span>Python</span><span>PyPI</span><span>GitHub Actions</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/xiq-client" target="_blank" rel="noopener" aria-label="xiq-client repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="networks">
     <div class="tag">networks</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/bgp-lab" target="_blank" rel="noopener">bgp-lab</a></h2><p>A minimal BGP speaker in Python that peers with FRRouting in Docker: OPEN, KEEPALIVE, UPDATE by hand.</p>
     
-    <div class="stack" style="margin-top:12px"><span>Python</span><span>FRR</span><span>Docker</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/bgp-lab" target="_blank" rel="noopener" aria-label="bgp-lab repository on GitHub">repo ↗</a></div>
+    <div class="stack" style="margin-top:8px"><span>Python</span><span>FRR</span><span>Docker</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/bgp-lab" target="_blank" rel="noopener" aria-label="bgp-lab repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="hardware tools">
     <div class="tag">hardware · tools</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/sv-delay-inject" target="_blank" rel="noopener">sv-delay-inject</a></h2><p>A script for injecting gate delays into SystemVerilog modules, for watching glitches and races in simulation.</p>
     
-    <div class="stack" style="margin-top:12px"><span>Python</span><span>SystemVerilog</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/sv-delay-inject" target="_blank" rel="noopener" aria-label="sv-delay-inject repository on GitHub">repo ↗</a></div>
+    <div class="stack" style="margin-top:8px"><span>Python</span><span>SystemVerilog</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/sv-delay-inject" target="_blank" rel="noopener" aria-label="sv-delay-inject repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="hardware">
     <div class="tag">hardware</div><span class="corner">2026</span>
     <h2><a href="https://github.com/kaikino/sv-snake" target="_blank" rel="noopener">sv-snake</a></h2><a class="shot contain" href="assets/img/sv-snake-diagram.webp" data-alt="sv-snake block diagram" aria-label="Enlarge: sv-snake block diagram"><img src="assets/img/sv-snake-diagram-640.webp" srcset="assets/img/sv-snake-diagram-640.webp 640w, assets/img/sv-snake-diagram.webp 1200w" sizes="(max-width: 700px) 90vw, 520px" width="1200" height="812" alt="sv-snake block diagram" loading="lazy"></a><p>Snake & apples, entirely in hardware.</p>
     
-    <div class="stack" style="margin-top:12px"><span>SystemVerilog</span><span>FPGA</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/sv-snake" target="_blank" rel="noopener" aria-label="sv-snake repository on GitHub">repo ↗</a></div>
+    <div class="stack" style="margin-top:8px"><span>SystemVerilog</span><span>FPGA</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/sv-snake" target="_blank" rel="noopener" aria-label="sv-snake repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="hardware systems">
     <div class="tag">hardware · systems</div><span class="corner">2026 · WIP</span>
     <h2><a href="https://github.com/kaikino/dance-trainer" target="_blank" rel="noopener">Dance Trainer</a></h2><p>An ankle-worn sensor node, an Android app and a small ML classifier that score choreography presets. Work in progress.</p>
     
-    <div class="stack" style="margin-top:12px"><span>Firmware</span><span>Android</span><span>ML</span></div>
-    <div class="small mono" style="margin-top:12px;display:flex;gap:12px"><a href="https://github.com/kaikino/dance-trainer" target="_blank" rel="noopener" aria-label="Dance Trainer repository on GitHub">repo ↗</a></div>
+    <div class="stack" style="margin-top:8px"><span>Firmware</span><span>Android</span><span>ML</span></div>
+    <div class="small mono" style="margin-top:10px;display:flex;gap:12px"><a href="https://github.com/kaikino/dance-trainer" target="_blank" rel="noopener" aria-label="Dance Trainer repository on GitHub">repo ↗</a></div>
   </article>
 <article class="card " data-tags="systems coursework">
     <div class="tag">systems · coursework</div><span class="corner">2026</span>
     <h2>MultiPaxos KV Store</h2><p>A sharded key-value store built on MultiPaxos for UW Distributed Systems: leader election, log replication, reconfiguration and shard movement under a model checker. (private, coursework)</p>
     
-    <div class="stack" style="margin-top:12px"><span>Java</span></div>
+    <div class="stack" style="margin-top:8px"><span>Java</span></div>
     
   </article>
 <article class="card " data-tags="systems coursework">
     <div class="tag">systems · coursework</div><span class="corner">2026</span>
     <h2>Simple DB Engine</h2><p>A small database management system with SQL-like operations, a buffer pool, and a query executor. (private, coursework)</p>
     
-    <div class="stack" style="margin-top:12px"><span>Java</span></div>
+    <div class="stack" style="margin-top:8px"><span>Java</span></div>
     
   </article>
 <article class="card " data-tags="cloud">
     <div class="tag">cloud</div><span class="corner">2025</span>
     <h2>Intelligent Document Explorer</h2><p>A serverless document-ingestion pipeline built as an AWS intern: 9 Lambdas orchestrated by Step Functions with parallel branches, catch states and a Textract → Rekognition fallback so no upload is dropped. (private)</p>
-    <ul><li>S3 → EventBridge → SQS for async Textract polling; Comprehend summaries; idempotent DynamoDB writes across 10 file formats.</li><li>Multi-VPC isolation with private subnets and peering, least-privilege IAM, CloudWatch dashboards and alarms.</li></ul>
-    <div class="stack" style="margin-top:12px"><span>Python</span><span>AWS Lambda</span><span>Step Functions</span><span>Textract</span><span>DynamoDB</span><span>SAM</span></div>
+    <details class="more"><summary>details</summary><ul><li>S3 → EventBridge → SQS for async Textract polling; Comprehend summaries; idempotent DynamoDB writes across 10 file formats.</li><li>Multi-VPC isolation with private subnets and peering, least-privilege IAM, CloudWatch dashboards and alarms.</li></ul></details>
+    <div class="stack" style="margin-top:8px"><span>Python</span><span>AWS Lambda</span><span>Step Functions</span><span>Textract</span><span>DynamoDB</span><span>SAM</span></div>
     
   </article>
 <!-- /grid -->
